@@ -234,8 +234,8 @@ MonoBehaviour:
   sprintFOVStepTime: 10
   useSprintBar: 0
   hideBarWhenFull: 1
-  sprintBarBG: {fileID: 0}
-  sprintBar: {fileID: 0}
+  sprintBarBG: {fileID: 8393882897528575176}
+  sprintBar: {fileID: 8393882898105781916}
   sprintBarWidthPercent: 0.3
   sprintBarHeightPercent: 0.015
   enableJump: 1
@@ -291,6 +291,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ac7218b7-b03e-4aa2-9e04-653e6e22b3e1
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 38a55325-f905-4e3c-8815-aad6c5fbf724
+    m_ActionName: Player/Sprint[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
