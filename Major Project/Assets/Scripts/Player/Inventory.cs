@@ -1,15 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//! Only used for debugging, remove later
+using NaughtyAttributes;
 
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
 
-    private Dictionary<Item, int> items = new Dictionary<Item, int>();
+    private Dictionary<ItemData, int> items = new Dictionary<ItemData, int>();
+    public Dictionary<ItemData, int> Items
+    {
+        get { return items; }
+
+        private set
+        {
+            items = value;
+        }
+    }
 
     void Awake()
     {
+        // Set the instance to this if it is null, otherwise destroy this
         if (Instance == null)
         {
             Instance = this;
@@ -20,31 +32,47 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(Item item, int amount)
+    //! Only used for debugging, remove later
+    [Button]
+    void LogItems()
     {
-        if (items.ContainsKey(item))
+        foreach (KeyValuePair<ItemData, int> item in Items)
         {
-            items[item] += amount;
-        }
-        else
-        {
-            items.Add(item, amount);
+            Debug.Log(item.Key.ItemName + ": " + item.Value);
         }
     }
 
-    public void AddItems(Item[] items, int[] amounts)
+    #region Add Items
+    public void AddItem(ItemData item, int amount = 1)
     {
+        if (Items.ContainsKey(item))
+        {
+            Items[item] += amount;
+        }
+        else
+        {
+            Items.Add(item, amount);
+        }
+    }
+
+    public void AddItems(ItemData[] items, int[] amounts = null)
+    {
+        if (amounts == null)
+            amounts = SetDefaultAmounts(items);
+
         for (int i = 0; i < items.Length; i++)
         {
             AddItem(items[i], amounts[i]);
         }
     }
+    #endregion
 
-    public bool HasItem(Item item, int amount)
+    #region Has Items
+    public bool HasItem(ItemData item, int amount = 1)
     {
-        if (items.ContainsKey(item))
+        if (Items.ContainsKey(item))
         {
-            return items[item] >= amount;
+            return Items[item] >= amount;
         }
         else
         {
@@ -52,8 +80,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public bool HasItems(Item[] items, int[] amounts)
+    public bool HasItems(ItemData[] items, int[] amounts = null)
     {
+        if (amounts == null)
+            amounts = SetDefaultAmounts(items);
+
         for (int i = 0; i < items.Length; i++)
         {
             if (!HasItem(items[i], amounts[i]))
@@ -63,24 +94,43 @@ public class Inventory : MonoBehaviour
         }
         return true;
     }
+    #endregion
 
-    public void RemoveItem(Item item, int amount)
+    #region Remove Items
+    public void RemoveItem(ItemData item, int amount = 1)
     {
-        if (items.ContainsKey(item))
+        if (HasItem(item, amount))
         {
-            items[item] -= amount;
-            if (items[item] <= 0)
+            Items[item] -= amount;
+            if (Items[item] <= 0)
             {
-                items.Remove(item);
+                Items.Remove(item);
             }
         }
     }
 
-    public void RemoveItems(Item[] items, int[] amounts)
+    public void RemoveItems(ItemData[] items, int[] amounts = null)
     {
+        if (amounts == null)
+            amounts = SetDefaultAmounts(items);
+
         for (int i = 0; i < items.Length; i++)
         {
             RemoveItem(items[i], amounts[i]);
         }
+    }
+    #endregion
+
+    #region Get Items
+
+    #endregion
+    private int[] SetDefaultAmounts(ItemData[] items)
+    {
+        int[] amounts = new int[items.Length];
+        for (int i = 0; i < items.Length; i++)
+        {
+            amounts[i] = 1;
+        }
+        return amounts;
     }
 }
