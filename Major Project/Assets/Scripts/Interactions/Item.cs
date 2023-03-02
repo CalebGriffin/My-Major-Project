@@ -19,8 +19,8 @@ public class Item : Interactable
     private bool canvasEnabled = false;
 
     // Collection Animation Stuff
-    private float collectHeight = 0.5f;
-    private float collectAnimationTime = 0.5f;
+    private float collectHeight = 0.3f;
+    private float collectAnimationTime = 0.3f;
     
     void Awake()
     {
@@ -70,6 +70,7 @@ public class Item : Interactable
         // Add the item to the inventory
         Inventory.Instance.AddItem(this.itemData);
 
+        canvasEnabled = false;
         LeanTween.cancel(nameCanvas);
         nameCanvas.SetActive(false);
 
