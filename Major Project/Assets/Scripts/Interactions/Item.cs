@@ -16,6 +16,7 @@ public class Item : Interactable
     private Vector3 nameCanvasScale = new Vector3(0.0005f, 0.0005f, 1f);
     private float nameCanvasScaleTime = 0.2f;
     private float waitTime = 0.5f;
+    private bool canvasEnabled = false;
 
     // Collection Animation Stuff
     private float collectHeight = 0.5f;
@@ -87,7 +88,10 @@ public class Item : Interactable
     private IEnumerator ShowCanvas()
     {
         Debug.Log("ShowCanvas");
+        canvasEnabled = true;
         yield return new WaitForSeconds(waitTime);
+        if (!canvasEnabled)
+            yield break;
         Debug.Log("ShowCanvas (after wait)");
         nameCanvas.SetActive(true);
         LeanTween.scale(nameCanvas, nameCanvasScale, nameCanvasScaleTime);
@@ -96,6 +100,7 @@ public class Item : Interactable
     private void HideCanvas()
     {
         Debug.Log("HideCanvas");
+        canvasEnabled = false;
         LeanTween.scale(nameCanvas, Vector3.zero, nameCanvasScaleTime).setOnComplete(() => nameCanvas.SetActive(false));
     }
 }
