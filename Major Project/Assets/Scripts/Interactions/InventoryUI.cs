@@ -23,6 +23,8 @@ public class InventoryUI : MonoBehaviour
 
     private bool inventoryOpen = false;
 
+    private float inventoryAnimationTime = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,14 +82,14 @@ public class InventoryUI : MonoBehaviour
     private void AnimateInventoryUIIn()
     {
         // Animate the inventory UI in
-        LeanTween.moveLocalY(gameObject, 0, 0.5f).setEaseOutBack();
-        LeanTween.scale(gameObject, Vector3.one, 0.5f).setEaseOutBack();
+        LeanTween.moveLocalY(gameObject, 0, inventoryAnimationTime).setEaseOutBack();
+        LeanTween.scale(gameObject, Vector3.one, inventoryAnimationTime).setEaseOutBack();
     }
 
     private void AnimateInventoryUIOut()
     {
         // Animate the inventory UI out
-        LeanTween.moveLocalY(gameObject, -1000, 0.5f).setEaseInBack();
-        LeanTween.scale(gameObject, Vector3.zero, 0.5f).setEaseInBack();
+        LeanTween.moveLocalY(gameObject, -1000, inventoryAnimationTime).setEaseInBack();
+        LeanTween.scale(gameObject, Vector3.zero, inventoryAnimationTime).setEaseInBack();
     }
 }

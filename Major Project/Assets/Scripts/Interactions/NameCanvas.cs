@@ -9,7 +9,7 @@ public class NameCanvas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mainCameraTransform = Camera.main.transform;
+        mainCameraTransform = GRefs.Instance.PlayerCameraTransform;
     }
 
     // Update is called once per frame
