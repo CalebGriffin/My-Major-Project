@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ItemMenu",
+                    "name": "OpenItemMenu",
                     "type": "Button",
                     "id": "32d15b03-299c-49ca-8dcf-8cb3041407db",
                     "expectedControlType": "Button",
@@ -167,7 +167,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "ItemMenu",
+                    "action": "OpenItemMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -178,13 +178,22 @@
             "id": "d88470d7-27ea-4bfb-9574-e3fd75101730",
             "actions": [
                 {
-                    "name": "ItemMenu",
+                    "name": "CloseItemMenu",
                     "type": "Button",
                     "id": "be5ae219-cf09-4642-8cf4-c48a0edc62f7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MoveItemSelection",
+                    "type": "Value",
+                    "id": "15269872-3f42-4438-9288-62303f5bdab2",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -195,9 +204,64 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "ItemMenu",
+                    "action": "CloseItemMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "0273321c-65dc-489d-a03d-60a6151a3adc",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "MoveItemSelection",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "fcd578c0-05d0-4a42-b4b5-374db5a4d9f2",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "MoveItemSelection",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "deb40319-f54f-449a-8527-86444bba18b5",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "MoveItemSelection",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "5d518df1-011d-4a9d-97f9-119ad5cb7e60",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "MoveItemSelection",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "dde6e468-c1c8-460e-8364-5565696a743e",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "MoveItemSelection",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

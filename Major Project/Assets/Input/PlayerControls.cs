@@ -73,7 +73,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ItemMenu"",
+                    ""name"": ""OpenItemMenu"",
                     ""type"": ""Button"",
                     ""id"": ""32d15b03-299c-49ca-8dcf-8cb3041407db"",
                     ""expectedControlType"": ""Button"",
@@ -189,7 +189,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""ItemMenu"",
+                    ""action"": ""OpenItemMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -200,13 +200,22 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""d88470d7-27ea-4bfb-9574-e3fd75101730"",
             ""actions"": [
                 {
-                    ""name"": ""ItemMenu"",
+                    ""name"": ""CloseItemMenu"",
                     ""type"": ""Button"",
                     ""id"": ""be5ae219-cf09-4642-8cf4-c48a0edc62f7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MoveItemSelection"",
+                    ""type"": ""Value"",
+                    ""id"": ""15269872-3f42-4438-9288-62303f5bdab2"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -217,9 +226,64 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""ItemMenu"",
+                    ""action"": ""CloseItemMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""0273321c-65dc-489d-a03d-60a6151a3adc"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveItemSelection"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""fcd578c0-05d0-4a42-b4b5-374db5a4d9f2"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveItemSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""deb40319-f54f-449a-8527-86444bba18b5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveItemSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""5d518df1-011d-4a9d-97f9-119ad5cb7e60"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveItemSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""dde6e468-c1c8-460e-8364-5565696a743e"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveItemSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -289,10 +353,11 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_ItemMenu = m_Player.FindAction("ItemMenu", throwIfNotFound: true);
+        m_Player_OpenItemMenu = m_Player.FindAction("OpenItemMenu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
-        m_UI_ItemMenu = m_UI.FindAction("ItemMenu", throwIfNotFound: true);
+        m_UI_CloseItemMenu = m_UI.FindAction("CloseItemMenu", throwIfNotFound: true);
+        m_UI_MoveItemSelection = m_UI.FindAction("MoveItemSelection", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_Newaction = m_Dialogue.FindAction("New action", throwIfNotFound: true);
@@ -360,7 +425,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_ItemMenu;
+    private readonly InputAction m_Player_OpenItemMenu;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -370,7 +435,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @ItemMenu => m_Wrapper.m_Player_ItemMenu;
+        public InputAction @OpenItemMenu => m_Wrapper.m_Player_OpenItemMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -395,9 +460,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @ItemMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItemMenu;
-                @ItemMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItemMenu;
-                @ItemMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnItemMenu;
+                @OpenItemMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenItemMenu;
+                @OpenItemMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenItemMenu;
+                @OpenItemMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenItemMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -417,9 +482,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
-                @ItemMenu.started += instance.OnItemMenu;
-                @ItemMenu.performed += instance.OnItemMenu;
-                @ItemMenu.canceled += instance.OnItemMenu;
+                @OpenItemMenu.started += instance.OnOpenItemMenu;
+                @OpenItemMenu.performed += instance.OnOpenItemMenu;
+                @OpenItemMenu.canceled += instance.OnOpenItemMenu;
             }
         }
     }
@@ -428,12 +493,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // UI
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
-    private readonly InputAction m_UI_ItemMenu;
+    private readonly InputAction m_UI_CloseItemMenu;
+    private readonly InputAction m_UI_MoveItemSelection;
     public struct UIActions
     {
         private @PlayerControls m_Wrapper;
         public UIActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ItemMenu => m_Wrapper.m_UI_ItemMenu;
+        public InputAction @CloseItemMenu => m_Wrapper.m_UI_CloseItemMenu;
+        public InputAction @MoveItemSelection => m_Wrapper.m_UI_MoveItemSelection;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -443,16 +510,22 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_UIActionsCallbackInterface != null)
             {
-                @ItemMenu.started -= m_Wrapper.m_UIActionsCallbackInterface.OnItemMenu;
-                @ItemMenu.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnItemMenu;
-                @ItemMenu.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnItemMenu;
+                @CloseItemMenu.started -= m_Wrapper.m_UIActionsCallbackInterface.OnCloseItemMenu;
+                @CloseItemMenu.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnCloseItemMenu;
+                @CloseItemMenu.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnCloseItemMenu;
+                @MoveItemSelection.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveItemSelection;
+                @MoveItemSelection.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveItemSelection;
+                @MoveItemSelection.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveItemSelection;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @ItemMenu.started += instance.OnItemMenu;
-                @ItemMenu.performed += instance.OnItemMenu;
-                @ItemMenu.canceled += instance.OnItemMenu;
+                @CloseItemMenu.started += instance.OnCloseItemMenu;
+                @CloseItemMenu.performed += instance.OnCloseItemMenu;
+                @CloseItemMenu.canceled += instance.OnCloseItemMenu;
+                @MoveItemSelection.started += instance.OnMoveItemSelection;
+                @MoveItemSelection.performed += instance.OnMoveItemSelection;
+                @MoveItemSelection.canceled += instance.OnMoveItemSelection;
             }
         }
     }
@@ -515,11 +588,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnItemMenu(InputAction.CallbackContext context);
+        void OnOpenItemMenu(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
-        void OnItemMenu(InputAction.CallbackContext context);
+        void OnCloseItemMenu(InputAction.CallbackContext context);
+        void OnMoveItemSelection(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {
