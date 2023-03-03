@@ -23,6 +23,7 @@ public class NewFirstPersonController : MonoBehaviour
 
     public Camera playerCamera;
 
+    private PlayerInput playerInput;
     private PlayerControls playerControls;
     private InputAction moveAction;
     private InputAction lookAction;
@@ -150,11 +151,12 @@ public class NewFirstPersonController : MonoBehaviour
         jointOriginalPos = joint.localPosition;
 
         // Setup New Input System Stuff
+        playerInput = GRefs.Instance.PlayerInput;
         playerControls = GRefs.Instance.PlayerControls;
-        moveAction = playerControls.Player.Move;
-        jumpAction = playerControls.Player.Jump;
-        lookAction = playerControls.Player.Look;
-        sprintAction = playerControls.Player.Sprint;
+        moveAction = playerInput.actions[playerControls.Player.Move.name];
+        jumpAction = playerInput.actions[playerControls.Player.Jump.name];
+        lookAction = playerInput.actions[playerControls.Player.Look.name];
+        sprintAction = playerInput.actions[playerControls.Player.Sprint.name];
 
         if (!unlimitedSprint)
         {

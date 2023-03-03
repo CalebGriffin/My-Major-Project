@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     // Input references
+    private PlayerInput playerInput;
     private PlayerControls playerControls;
     private InputAction interactAction;
 
@@ -27,7 +28,8 @@ public class Player : MonoBehaviour
     {
         // Get the player input and the interact action, then add the OnInteract method to the action's performed event
         playerControls = GRefs.Instance.PlayerControls;
-        interactAction = playerControls.Player.Interact;
+        playerInput = GRefs.Instance.PlayerInput;
+        interactAction = playerInput.actions[playerControls.Player.Interact.name];
         interactAction.performed += Interact;
 
         // Get the camera transform

@@ -11,6 +11,8 @@ public class GRefs : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+
+        playerControls = new PlayerControls();
     }
 
     // Player References
@@ -25,6 +27,9 @@ public class GRefs : MonoBehaviour
 
     [SerializeField] private Transform playerCameraTransform;
     public Transform PlayerCameraTransform { get { return playerCameraTransform; } }
+
+    [SerializeField] private PlayerInput playerInput;
+    public PlayerInput PlayerInput { get { return playerInput; } }
 
     [SerializeField] private PlayerControls playerControls;
     public PlayerControls PlayerControls { get { return playerControls; } }
