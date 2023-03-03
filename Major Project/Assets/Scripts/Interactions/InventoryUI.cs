@@ -4,8 +4,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-//! Only used for debugging, remove later
-using NaughtyAttributes;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -21,10 +19,6 @@ public class InventoryUI : MonoBehaviour
     private Color selectedColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
     private Color deselectedColor = new Color(0, 0, 0, 0.5f);
 
-    private bool inventoryOpen = false;
-
-    private float inventoryAnimationTime = 0.5f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -37,25 +31,7 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    //! Only used for debugging, remove later
-    [Button]
-    private void InventoryUIToggle()
-    {
-        // Toggle the inventory UI
-        inventoryOpen = !inventoryOpen;
-
-        if (inventoryOpen)
-        {
-            UpdateInventoryUI();
-            AnimateInventoryUIIn();
-        }
-        else
-        {
-            AnimateInventoryUIOut();
-        }
-    }
-
-    private void UpdateInventoryUI()
+    public void UpdateInventoryUI()
     {
         // Check if the inventory has changed
         if (Inventory.Instance.Items != prevItems)
@@ -79,17 +55,4 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    private void AnimateInventoryUIIn()
-    {
-        // Animate the inventory UI in
-        LeanTween.moveLocalY(gameObject, 0, inventoryAnimationTime).setEaseOutBack();
-        LeanTween.scale(gameObject, Vector3.one, inventoryAnimationTime).setEaseOutBack();
-    }
-
-    private void AnimateInventoryUIOut()
-    {
-        // Animate the inventory UI out
-        LeanTween.moveLocalY(gameObject, -1000, inventoryAnimationTime).setEaseInBack();
-        LeanTween.scale(gameObject, Vector3.zero, inventoryAnimationTime).setEaseInBack();
-    }
 }
