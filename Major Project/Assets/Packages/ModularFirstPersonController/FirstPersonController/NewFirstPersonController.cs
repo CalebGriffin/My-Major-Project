@@ -150,14 +150,6 @@ public class NewFirstPersonController : MonoBehaviour
         originalScale = transform.localScale;
         jointOriginalPos = joint.localPosition;
 
-        // Setup New Input System Stuff
-        playerInput = GRefs.Instance.PlayerInput;
-        playerControls = GRefs.Instance.PlayerControls;
-        moveAction = playerInput.actions[playerControls.Player.Move.name];
-        jumpAction = playerInput.actions[playerControls.Player.Jump.name];
-        lookAction = playerInput.actions[playerControls.Player.Look.name];
-        sprintAction = playerInput.actions[playerControls.Player.Sprint.name];
-
         if (!unlimitedSprint)
         {
             sprintRemaining = sprintDuration;
@@ -167,6 +159,14 @@ public class NewFirstPersonController : MonoBehaviour
 
     void Start()
     {
+        // Setup New Input System Stuff
+        playerInput = GRefs.Instance.PlayerInput;
+        playerControls = GRefs.Instance.PlayerControls;
+        moveAction = playerInput.actions[playerControls.Player.Move.name];
+        jumpAction = playerInput.actions[playerControls.Player.Jump.name];
+        lookAction = playerInput.actions[playerControls.Player.Look.name];
+        sprintAction = playerInput.actions[playerControls.Player.Sprint.name];
+
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
