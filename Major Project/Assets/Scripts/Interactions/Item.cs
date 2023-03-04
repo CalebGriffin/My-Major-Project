@@ -82,6 +82,7 @@ public class Item : Interactable
     // Can be overridden to play a different animation
     virtual protected void Collect()
     {
+        GameObject.Instantiate(itemData.ItemParticles, transform.position, Quaternion.Euler(-90, 0, 0));
         LeanTween.scale(gameObject, Vector3.zero, collectAnimationTime).setOnComplete(() => Destroy(gameObject));
         LeanTween.moveLocalY(gameObject, transform.localPosition.y + collectHeight, collectAnimationTime);
     }

@@ -10,4 +10,7 @@ public class ItemData : ScriptableObject
 
     [SerializeField] Sprite itemSprite;
     public Sprite ItemSprite { get { return itemSprite; } }
+
+    [SerializeField] GameObject itemParticles;
+    public GameObject ItemParticles { get { return itemParticles; } }
 }
