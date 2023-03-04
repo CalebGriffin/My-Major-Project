@@ -727,7 +727,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 110
   m_TargetDisplay: 0
 --- !u!114 &4513377296156566409
 MonoBehaviour:
@@ -1625,7 +1625,7 @@ GameObject:
   - component: {fileID: 8393882897410099265}
   - component: {fileID: 8393882897410099278}
   m_Layer: 0
-  m_Name: CrosshairAndStamina
+  m_Name: CrosshairAndStamina Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
