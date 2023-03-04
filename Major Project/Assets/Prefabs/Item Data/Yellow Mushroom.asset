@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c692b2611ec0e40e6998be4244d20540, type: 3}
-  m_Name: Red Mushroom
+  m_Name: Yellow Mushroom
   m_EditorClassIdentifier: 
-  itemName: Red Mushroom
-  itemSprite: {fileID: 21300000, guid: e166c15f1d44e479d85b17f8735ecb6a, type: 3}
+  itemName: Yellow Mushroom
+  itemSprite: {fileID: 21300000, guid: aafbdd91af8074d66a5143fbb7ec9b54, type: 3}
   itemParticles: {fileID: 1886210046662893464, guid: fa146705f63224e98a185ccb5d06aba8, type: 3}
