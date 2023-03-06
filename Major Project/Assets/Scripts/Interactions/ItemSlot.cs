@@ -9,8 +9,8 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] private Color hoverColor;
     [SerializeField] private Color normalColor;
     [SerializeField] private Image image;
-    private string itemName;
-    public string ItemName { set { itemName = value; } }
+
+    public ItemData ItemData;
 
     [SerializeField] private TextMeshProUGUI currentItemText;
 
@@ -43,7 +43,12 @@ public class ItemSlot : MonoBehaviour
     public void Highlight()
     {
         image.color = hoverColor;
-        currentItemText.text = "Current Item: " + itemName;
+
+        if (ItemData == null)
+            currentItemText.text = "Current Item:";
+        else
+            currentItemText.text = "Current Item: " + ItemData.ItemName;
+
         isHovering = true;
     }
 

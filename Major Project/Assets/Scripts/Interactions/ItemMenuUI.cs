@@ -12,12 +12,19 @@ public class ItemMenuUI : MonoBehaviour
     private InputAction itemMenuEnableAction;
     private InputAction itemMenuDisableAction;
     private InputAction moveItemSelectionAction;
+    private InputAction removeSelectedItemAction;
 
     private bool menuOpen = false;
 
     private float itemMenuAnimationTime = 0.5f;
 
     [SerializeField] private GameObject itemMenuObject;
+
+    [SerializeField] private GameObject toolTipsObject;
+    [SerializeField] private GameObject keyboardToolTipsObject;
+    [SerializeField] private GameObject gamepadToolTipsObject;
+    [SerializeField] private TextMeshProUGUI keyboardDropItemText;
+    [SerializeField] private TextMeshProUGUI gamepadDropItemText;
 
     [SerializeField] private InventoryUI inventoryUI;
     [SerializeField] private ToolsUI toolsUI;
@@ -44,6 +51,11 @@ public class ItemMenuUI : MonoBehaviour
 
         moveItemSelectionAction = playerInput.actions[playerControls.UI.MoveItemSelection.name];
         moveItemSelectionAction.performed +=  OnMoveItemActionPerformed;
+
+        removeSelectedItemAction = playerInput.actions[playerControls.UI.RemoveSelectedItem.name];
+        removeSelectedItemAction.performed += RemoveSelectedItem;
+
+        playerInput.onControlsChanged += UpdateToolTipScheme;
     }
 
     private void ItemMenuToggle(InputAction.CallbackContext context)
@@ -51,6 +63,7 @@ public class ItemMenuUI : MonoBehaviour
         if (menuOpen)
         {
             menuOpen = false;
+            toolTipsObject.SetActive(false);
             AnimateItemMenuUIOut();
         }
         else
@@ -68,7 +81,10 @@ public class ItemMenuUI : MonoBehaviour
     {
         // Animate the item menu UI in
         LeanTween.moveLocalY(itemMenuObject, 0, itemMenuAnimationTime).setEaseOutCirc();
-        LeanTween.scale(itemMenuObject, Vector3.one, itemMenuAnimationTime).setEaseOutBack();
+        LeanTween.scale(itemMenuObject, Vector3.one, itemMenuAnimationTime).setEaseOutBack().setOnComplete(() =>
+        {
+            toolTipsObject.SetActive(true);
+        });
     }
 
     private void AnimateItemMenuUIOut()
@@ -95,6 +111,7 @@ public class ItemMenuUI : MonoBehaviour
 
     private void OnMoveItemActionPerformed(InputAction.CallbackContext context)
     {
+        if (!menuOpen) return;
         MoveItemSelection(context.ReadValue<Vector2>());
         StopAllCoroutines();
         StartCoroutine(MoveActionHeld());
@@ -132,6 +149,46 @@ public class ItemMenuUI : MonoBehaviour
             }
         }
 
+        currentItemSlot.Highlight();
+
+        if (currentItemSlot.ItemData != null)
+        {
+            keyboardDropItemText.color = currentItemSlot.ItemData.IsTradeable ? Color.white : new Color(1, 1, 1, 0.3f);
+            gamepadDropItemText.color = keyboardDropItemText.color;
+        }
+        else
+        {
+            keyboardDropItemText.color = new Color(1, 1, 1, 0.3f);
+            gamepadDropItemText.color = keyboardDropItemText.color;
+        }
+    }
+
+    private void UpdateToolTipScheme(PlayerInput playerInput)
+    {
+        if (playerInput.currentControlScheme == playerControls.KeyboardScheme.name)
+        {
+            keyboardToolTipsObject.SetActive(true);
+            gamepadToolTipsObject.SetActive(false);
+        }
+        else if (playerInput.currentControlScheme == playerControls.GamepadScheme.name)
+        {
+            keyboardToolTipsObject.SetActive(true);
+            gamepadToolTipsObject.SetActive(false);
+        }
+        else
+        {
+            keyboardToolTipsObject.SetActive(false);
+            gamepadToolTipsObject.SetActive(false);
+        }
+    }
+
+    private void RemoveSelectedItem(InputAction.CallbackContext context)
+    {
+        if (currentItemSlot.ItemData == null) return;
+        if (!currentItemSlot.ItemData.IsTradeable) return;
+
+        Inventory.Instance.RemoveItem(currentItemSlot.ItemData);
+        inventoryUI.UpdateInventoryUI();
         currentItemSlot.Highlight();
     }
 }

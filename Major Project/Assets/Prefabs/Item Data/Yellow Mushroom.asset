@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Yellow Mushroom
   itemSprite: {fileID: 21300000, guid: aafbdd91af8074d66a5143fbb7ec9b54, type: 3}
   itemParticles: {fileID: 1886210046662893464, guid: fa146705f63224e98a185ccb5d06aba8, type: 3}
+  isTradeable: 1

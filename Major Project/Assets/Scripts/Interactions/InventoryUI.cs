@@ -45,6 +45,7 @@ public class InventoryUI : MonoBehaviour
             {
                 itemSlot.transform.GetChild(0).GetComponent<Image>().sprite = null;
                 itemSlot.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "";
+                itemSlot.GetComponent<ItemSlot>().ItemData = null;
                 itemSlot.transform.GetChild(0).gameObject.SetActive(false);
                 itemSlot.transform.GetChild(1).gameObject.SetActive(false);
             }
@@ -56,7 +57,7 @@ public class InventoryUI : MonoBehaviour
                 print("Item: " + Inventory.Instance.Items.Keys.ToArray()[i].ItemName + " Count: " + Inventory.Instance.Items.Values.ToArray()[i].ToString());
                 itemSlots[i].transform.GetChild(0).GetComponent<Image>().sprite = Inventory.Instance.Items.Keys.ToArray()[i].ItemSprite;
                 itemSlots[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = Inventory.Instance.Items.Values.ToArray()[i].ToString();
-                itemSlots[i].GetComponent<ItemSlot>().ItemName = Inventory.Instance.Items.Keys.ToArray()[i].ItemName;
+                itemSlots[i].GetComponent<ItemSlot>().ItemData = Inventory.Instance.Items.Keys.ToArray()[i];
                 itemSlots[i].transform.GetChild(0).gameObject.SetActive(true);
                 itemSlots[i].transform.GetChild(1).gameObject.SetActive(true);
             }

@@ -216,6 +216,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RemoveSelectedItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""c62c3528-db59-49d2-bf4a-d5ebf40ce971"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -284,6 +293,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""MoveItemSelection"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd2bed78-4757-440f-8624-f38c97a7a46b"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""RemoveSelectedItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -358,6 +378,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_CloseItemMenu = m_UI.FindAction("CloseItemMenu", throwIfNotFound: true);
         m_UI_MoveItemSelection = m_UI.FindAction("MoveItemSelection", throwIfNotFound: true);
+        m_UI_RemoveSelectedItem = m_UI.FindAction("RemoveSelectedItem", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_Newaction = m_Dialogue.FindAction("New action", throwIfNotFound: true);
@@ -495,12 +516,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_CloseItemMenu;
     private readonly InputAction m_UI_MoveItemSelection;
+    private readonly InputAction m_UI_RemoveSelectedItem;
     public struct UIActions
     {
         private @PlayerControls m_Wrapper;
         public UIActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @CloseItemMenu => m_Wrapper.m_UI_CloseItemMenu;
         public InputAction @MoveItemSelection => m_Wrapper.m_UI_MoveItemSelection;
+        public InputAction @RemoveSelectedItem => m_Wrapper.m_UI_RemoveSelectedItem;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -516,6 +539,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MoveItemSelection.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveItemSelection;
                 @MoveItemSelection.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveItemSelection;
                 @MoveItemSelection.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveItemSelection;
+                @RemoveSelectedItem.started -= m_Wrapper.m_UIActionsCallbackInterface.OnRemoveSelectedItem;
+                @RemoveSelectedItem.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnRemoveSelectedItem;
+                @RemoveSelectedItem.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnRemoveSelectedItem;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -526,6 +552,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @MoveItemSelection.started += instance.OnMoveItemSelection;
                 @MoveItemSelection.performed += instance.OnMoveItemSelection;
                 @MoveItemSelection.canceled += instance.OnMoveItemSelection;
+                @RemoveSelectedItem.started += instance.OnRemoveSelectedItem;
+                @RemoveSelectedItem.performed += instance.OnRemoveSelectedItem;
+                @RemoveSelectedItem.canceled += instance.OnRemoveSelectedItem;
             }
         }
     }
@@ -594,6 +623,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnCloseItemMenu(InputAction.CallbackContext context);
         void OnMoveItemSelection(InputAction.CallbackContext context);
+        void OnRemoveSelectedItem(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {

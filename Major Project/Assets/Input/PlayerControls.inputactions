@@ -194,6 +194,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "RemoveSelectedItem",
+                    "type": "Button",
+                    "id": "c62c3528-db59-49d2-bf4a-d5ebf40ce971",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -262,6 +271,17 @@
                     "action": "MoveItemSelection",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "fd2bed78-4757-440f-8624-f38c97a7a46b",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "RemoveSelectedItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

@@ -13,4 +13,7 @@ public class ItemData : ScriptableObject
 
     [SerializeField] GameObject itemParticles;
     public GameObject ItemParticles { get { return itemParticles; } }
+
+    [SerializeField] bool isTradeable;
+    public bool IsTradeable { get { return isTradeable; } }
 }
