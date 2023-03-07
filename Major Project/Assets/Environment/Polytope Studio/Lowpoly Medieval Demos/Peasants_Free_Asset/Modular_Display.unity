@@ -123,6 +123,136 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!21 &567622030
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PT_Medieval_Modular_NPC_Material
+  m_Shader: {fileID: 4800000, guid: 5fdb92501eac48d4a87329098a14e790, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _METALICON_ON
+  - _METALLICON_ON
+  - _SMOOTHNESSON_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _COATOFARMSMASK:
+        m_Texture: {fileID: 2800000, guid: d294e9544b9eca64188ea9d2482ea8a1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 6bb85a5d9f66498428d452f1d30c189c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample1:
+        m_Texture: {fileID: 2800000, guid: 6bb85a5d9f66498428d452f1d30c189c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample2:
+        m_Texture: {fileID: 2800000, guid: f7390e40451b1494fbe67eb39e53d4ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample3:
+        m_Texture: {fileID: 2800000, guid: f7390e40451b1494fbe67eb39e53d4ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _CEL1POWER: 0.15
+    - _CEL1SIZE: 0.1
+    - _CEL2POWER: 0.15
+    - _CEL2SIZE: 0.4
+    - _CEL3POWER: 0.15
+    - _CEL3SIZE: 0.8
+    - _EYESSMOOTHNESS: 0.7
+    - _HAIRSMOOTHNESS: 0.185
+    - _LEATHER1SMOOTHNESS: 0.3
+    - _LEATHER2SMOOTHNESS: 0.3
+    - _LEATHER3SMOOTHNESS: 0.3
+    - _LEATHER4SMOOTHNES: 0.3
+    - _LEATHER4SMOOTHNESS: 0
+    - _LIPSSMOOTHNESS: 0.4
+    - _METAL1METALLIC: 0.65
+    - _METAL1SMOOTHNESS: 0.7
+    - _METAL2METALLIC: 0.65
+    - _METAL2SMOOTHNESS: 0.7
+    - _METAL3METALLIC: 0.65
+    - _METAL3SMOOTHNESS: 0.7
+    - _METAL4METALLIC: 0.653
+    - _METAL4SMOOTHNESS: 0.637
+    - _MetalicON: 1
+    - _MetalicOn: 1
+    - _MetallicON: 1
+    - _OCCLUSION: 0.5
+    - _OTHERSMOOTHNESS: 0.504
+    - _SCLERASMOOTHNESS: 0.5
+    - _SKINSMOOTHNESS: 0
+    - _SmoothnessOn: 1
+    - __dirty: 0
+    m_Colors:
+    - _CEL1COLOR: {r: 1, g: 1, b: 1, a: 0}
+    - _CEL2COLOR: {r: 1, g: 1, b: 1, a: 0}
+    - _CEL3COLOR: {r: 1, g: 1, b: 1, a: 0}
+    - _CLOTH1COLOR: {r: 0.2, g: 0.044601597, b: 0.019607842, a: 0}
+    - _CLOTH1COLOR1: {r: 0, g: 0.1792453, b: 0.05062231, a: 0}
+    - _CLOTH2COLOR: {r: 0.16834283, g: 0.2833042, b: 0.3679245, a: 0}
+    - _CLOTH2COLOR1: {r: 1, g: 0, b: 0, a: 0}
+    - _CLOTH3COLOR: {r: 0.38679248, g: 0.016420428, b: 0.016420428, a: 0}
+    - _CLOTH3COLOR1: {r: 0.3962264, g: 0.3391397, b: 0.2710039, a: 0}
+    - _CLOTH4COLOR: {r: 0.6037736, g: 0.09973892, b: 0.03702387, a: 0}
+    - _CLOTH4COLOR1: {r: 0.2011392, g: 0.3773585, b: 0.3739074, a: 0}
+    - _COATOFARMSCOLOR: {r: 1, g: 0, b: 0, a: 0}
+    - _EYESCOLOR: {r: 0.0734529, g: 0.1320755, b: 0.05046281, a: 1}
+    - _EYESCOLOR1: {r: 0.0734529, g: 0.1320755, b: 0.05046281, a: 1}
+    - _FEATHERS1COLOR: {r: 0.7735849, g: 0.492613, b: 0.492613, a: 0}
+    - _FEATHERS1COLOR1: {r: 0.7735849, g: 0.492613, b: 0.492613, a: 0}
+    - _FEATHERS2COLOR: {r: 1, g: 0, b: 0, a: 0}
+    - _FEATHERS2COLOR1: {r: 0.6792453, g: 0, b: 0, a: 0}
+    - _HAIRCOLOR: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0}
+    - _HAIRCOLOR1: {r: 1, g: 0, b: 0, a: 0}
+    - _LEATHER1COLOR: {r: 0.4811321, g: 0.2041155, b: 0.08851016, a: 1}
+    - _LEATHER1COLOR1: {r: 0.4811321, g: 0.2041155, b: 0.08851016, a: 1}
+    - _LEATHER2COLOR: {r: 0.4245283, g: 0.190437, b: 0.09011215, a: 1}
+    - _LEATHER2COLOR1: {r: 0.4245283, g: 0.190437, b: 0.09011215, a: 1}
+    - _LEATHER3COLOR: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
+    - _LEATHER3COLOR1: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
+    - _LEATHER4COLOR: {r: 0.5754717, g: 0.34474012, b: 0.34474012, a: 0}
+    - _LEATHER4COLOR1: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
+    - _LIPSCOLOR: {r: 0.8301887, g: 0.3185886, b: 0.2780349, a: 0}
+    - _LIPSCOLOR1: {r: 0.8301887, g: 0.3185886, b: 0.2780349, a: 0}
+    - _METAL1COLOR: {r: 0.8792791, g: 0.9922886, b: 1.007606, a: 0}
+    - _METAL1COLOR1: {r: 0.8792791, g: 0.9922886, b: 1.007606, a: 0}
+    - _METAL2COLOR: {r: 0.4674706, g: 0.4677705, b: 0.5188679, a: 0}
+    - _METAL2COLOR1: {r: 0.4674706, g: 0.4677705, b: 0.5188679, a: 0}
+    - _METAL3COLOR: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
+    - _METAL3COLOR1: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
+    - _METAL4COLOR: {r: 0, g: 0, b: 0, a: 0}
+    - _METAL4COLOR1: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
+    - _OTHERCOLOR: {r: 0.6509434, g: 0.29783732, b: 0.29783732, a: 0}
+    - _OTHERCOLOR1: {r: 0.5188679, g: 0.4637216, b: 0.3206212, a: 0}
+    - _SCLERACOLOR: {r: 0.9056604, g: 0.8159487, b: 0.8159487, a: 0}
+    - _SCLERACOLOR1: {r: 0.9056604, g: 0.8159487, b: 0.8159487, a: 0}
+    - _SKINCOLOR: {r: 0.745283, g: 0.66442686, b: 0.66442686, a: 0}
+    - _SKINCOLOR1: {r: 2.02193, g: 1.0081, b: 0.6199315, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &710292615
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,10 +863,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4730310349973049803, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 567622030}
     - target: {fileID: -2236950594083700581, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2236950594083700581, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 567622030}
     - target: {fileID: 919132149155446097, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Name
       value: PT_Medieval_Female_Modular_Free_Pack
@@ -749,18 +887,42 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 986976775909918091, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 567622030}
     - target: {fileID: 1335901820717818729, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1335901820717818729, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 567622030}
+    - target: {fileID: 2969994733102768569, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2969994733102768569, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 567622030}
     - target: {fileID: 5997941876497436660, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5997941876497436660, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 567622030}
     - target: {fileID: 6981583533346751470, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6981583533346751470, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 567622030}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
 --- !u!1 &1230363767 stripped
@@ -859,7 +1021,12 @@ MonoBehaviour:
   material:
     assets:
     - {fileID: 2100000, guid: c79855c6f54ed954293d041acc3120a8, type: 2}
-    instance: {fileID: 1799695877}
+    - {fileID: 2100000, guid: c3e7c45df5562ab4e986ba0da235b36b, type: 2}
+    - {fileID: 2100000, guid: 30a2e2fb0ea96494f946f44c595754bc, type: 2}
+    - {fileID: 2100000, guid: a803dca6c7758524c89a1606f9776a29, type: 2}
+    - {fileID: 2100000, guid: a34ffd8251f52174b89ec7c4e3d78e21, type: 2}
+    - {fileID: 2100000, guid: 6e65dbc213c144e73899b83fbd3c3892, type: 2}
+    instance: {fileID: 567622030}
     index: 0
   loaded: 1
   tooglehelmet: 0
@@ -867,51 +1034,51 @@ MonoBehaviour:
     color: {r: 0.745283, g: 0.66442686, b: 0.66442686, a: 0}
     smoothness: 0
   eyes:
-    color: {r: 0.0734529, g: 0.1320755, b: 0.05046281, a: 1}
+    color: {r: 0.07345288, g: 0.13207546, b: 0.050462782, a: 1}
     smoothness: 0.7
   hair:
-    color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0}
+    color: {r: 0.22641507, g: 0.22641507, b: 0.22641507, a: 0}
     smoothness: 0.185
   sclera:
     color: {r: 0.9056604, g: 0.8159487, b: 0.8159487, a: 0}
     smoothness: 0.5
   lips:
-    color: {r: 0.8301887, g: 0.3185886, b: 0.2780349, a: 0}
+    color: {r: 0.8301887, g: 0.31858858, b: 0.27803487, a: 0}
     smoothness: 0.4
   scars:
     color: {r: 0, g: 0, b: 0, a: 0}
     smoothness: 0
   feathers1:
-    color: {r: 0.7735849, g: 0.492613, b: 0.492613, a: 0}
+    color: {r: 0.7735849, g: 0.4926129, b: 0.4926129, a: 0}
   feathers2:
     color: {r: 1, g: 0, b: 0, a: 0}
   feathers3:
     color: {r: 0, g: 0, b: 0, a: 0}
   cloth1:
-    color: {r: 0.017755425, g: 0.1981132, b: 0.06872611, a: 0}
+    color: {r: 0.19999996, g: 0.044601575, b: 0.019607842, a: 0}
   cloth2:
-    color: {r: 0.16834283, g: 0.2833042, b: 0.3679245, a: 0}
+    color: {r: 0.1683428, g: 0.28330418, b: 0.36792448, a: 0}
   cloth3:
-    color: {r: 0.38679248, g: 0.3046903, b: 0.3046903, a: 0}
+    color: {r: 0.38679245, g: 0.016420428, b: 0.016420428, a: 0}
   leather1:
-    color: {r: 0.4811321, g: 0.2041155, b: 0.08851016, a: 1}
+    color: {r: 0.4811321, g: 0.20411545, b: 0.08851013, a: 1}
     smoothness: 0.3
   leather2:
-    color: {r: 0.4245283, g: 0.190437, b: 0.09011215, a: 1}
+    color: {r: 0.42452827, g: 0.19043696, b: 0.09011214, a: 1}
     smoothness: 0.3
   leather3:
-    color: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
+    color: {r: 0.16981125, g: 0.04637409, b: 0.02963688, a: 1}
     smoothness: 0.3
   metal1:
-    color: {r: 0.8792791, g: 0.9922886, b: 1.007606, a: 0}
+    color: {r: 0.8792791, g: 0.99228853, b: 1.007606, a: 0}
     smoothness: 0.7
     metallic: 0.65
   metal2:
-    color: {r: 0.4674706, g: 0.4677705, b: 0.5188679, a: 0}
+    color: {r: 0.4674706, g: 0.4677704, b: 0.51886785, a: 0}
     smoothness: 0.7
     metallic: 0.65
   metal3:
-    color: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
+    color: {r: 0.43832317, g: 0.43832317, b: 0.4716981, a: 0}
     smoothness: 0.7
     metallic: 0.65
   gems1:
@@ -1171,136 +1338,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!21 &1799695877
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PT_Medieval_Modular_NPC_Material
-  m_Shader: {fileID: 4800000, guid: 5fdb92501eac48d4a87329098a14e790, type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _METALICON_ON
-  - _METALLICON_ON
-  - _SMOOTHNESSON_ON
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _COATOFARMSMASK:
-        m_Texture: {fileID: 2800000, guid: d294e9544b9eca64188ea9d2482ea8a1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: 6bb85a5d9f66498428d452f1d30c189c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TextureSample1:
-        m_Texture: {fileID: 2800000, guid: 6bb85a5d9f66498428d452f1d30c189c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TextureSample2:
-        m_Texture: {fileID: 2800000, guid: f7390e40451b1494fbe67eb39e53d4ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _TextureSample3:
-        m_Texture: {fileID: 2800000, guid: f7390e40451b1494fbe67eb39e53d4ec, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _texcoord:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _texcoord2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _CEL1POWER: 0.15
-    - _CEL1SIZE: 0.1
-    - _CEL2POWER: 0.15
-    - _CEL2SIZE: 0.4
-    - _CEL3POWER: 0.15
-    - _CEL3SIZE: 0.8
-    - _EYESSMOOTHNESS: 0.7
-    - _HAIRSMOOTHNESS: 0.185
-    - _LEATHER1SMOOTHNESS: 0.3
-    - _LEATHER2SMOOTHNESS: 0.3
-    - _LEATHER3SMOOTHNESS: 0.3
-    - _LEATHER4SMOOTHNES: 0.3
-    - _LEATHER4SMOOTHNESS: 0
-    - _LIPSSMOOTHNESS: 0.4
-    - _METAL1METALLIC: 0.65
-    - _METAL1SMOOTHNESS: 0.7
-    - _METAL2METALLIC: 0.65
-    - _METAL2SMOOTHNESS: 0.7
-    - _METAL3METALLIC: 0.65
-    - _METAL3SMOOTHNESS: 0.7
-    - _METAL4METALLIC: 0.653
-    - _METAL4SMOOTHNESS: 0.637
-    - _MetalicON: 1
-    - _MetalicOn: 1
-    - _MetallicON: 1
-    - _OCCLUSION: 0.5
-    - _OTHERSMOOTHNESS: 0.533
-    - _SCLERASMOOTHNESS: 0.5
-    - _SKINSMOOTHNESS: 0
-    - _SmoothnessOn: 1
-    - __dirty: 0
-    m_Colors:
-    - _CEL1COLOR: {r: 1, g: 1, b: 1, a: 0}
-    - _CEL2COLOR: {r: 1, g: 1, b: 1, a: 0}
-    - _CEL3COLOR: {r: 1, g: 1, b: 1, a: 0}
-    - _CLOTH1COLOR: {r: 0.017755425, g: 0.1981132, b: 0.06872611, a: 0}
-    - _CLOTH1COLOR1: {r: 0, g: 0.1792453, b: 0.05062231, a: 0}
-    - _CLOTH2COLOR: {r: 0.16834283, g: 0.2833042, b: 0.3679245, a: 0}
-    - _CLOTH2COLOR1: {r: 1, g: 0, b: 0, a: 0}
-    - _CLOTH3COLOR: {r: 0.38679248, g: 0.3046903, b: 0.3046903, a: 0}
-    - _CLOTH3COLOR1: {r: 0.3962264, g: 0.3391397, b: 0.2710039, a: 0}
-    - _CLOTH4COLOR: {r: 0, g: 0.20754719, b: 0.011380422, a: 0}
-    - _CLOTH4COLOR1: {r: 0.2011392, g: 0.3773585, b: 0.3739074, a: 0}
-    - _COATOFARMSCOLOR: {r: 1, g: 0, b: 0, a: 0}
-    - _EYESCOLOR: {r: 0.0734529, g: 0.1320755, b: 0.05046281, a: 1}
-    - _EYESCOLOR1: {r: 0.0734529, g: 0.1320755, b: 0.05046281, a: 1}
-    - _FEATHERS1COLOR: {r: 0.7735849, g: 0.492613, b: 0.492613, a: 0}
-    - _FEATHERS1COLOR1: {r: 0.7735849, g: 0.492613, b: 0.492613, a: 0}
-    - _FEATHERS2COLOR: {r: 1, g: 0, b: 0, a: 0}
-    - _FEATHERS2COLOR1: {r: 0.6792453, g: 0, b: 0, a: 0}
-    - _HAIRCOLOR: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 0}
-    - _HAIRCOLOR1: {r: 1, g: 0, b: 0, a: 0}
-    - _LEATHER1COLOR: {r: 0.4811321, g: 0.2041155, b: 0.08851016, a: 1}
-    - _LEATHER1COLOR1: {r: 0.4811321, g: 0.2041155, b: 0.08851016, a: 1}
-    - _LEATHER2COLOR: {r: 0.4245283, g: 0.190437, b: 0.09011215, a: 1}
-    - _LEATHER2COLOR1: {r: 0.4245283, g: 0.190437, b: 0.09011215, a: 1}
-    - _LEATHER3COLOR: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
-    - _LEATHER3COLOR1: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
-    - _LEATHER4COLOR: {r: 0.5754717, g: 0.34474012, b: 0.34474012, a: 0}
-    - _LEATHER4COLOR1: {r: 0.1698113, g: 0.04637412, b: 0.02963688, a: 1}
-    - _LIPSCOLOR: {r: 0.8301887, g: 0.3185886, b: 0.2780349, a: 0}
-    - _LIPSCOLOR1: {r: 0.8301887, g: 0.3185886, b: 0.2780349, a: 0}
-    - _METAL1COLOR: {r: 0.8792791, g: 0.9922886, b: 1.007606, a: 0}
-    - _METAL1COLOR1: {r: 0.8792791, g: 0.9922886, b: 1.007606, a: 0}
-    - _METAL2COLOR: {r: 0.4674706, g: 0.4677705, b: 0.5188679, a: 0}
-    - _METAL2COLOR1: {r: 0.4674706, g: 0.4677705, b: 0.5188679, a: 0}
-    - _METAL3COLOR: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
-    - _METAL3COLOR1: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
-    - _METAL4COLOR: {r: 0, g: 0, b: 0, a: 0}
-    - _METAL4COLOR1: {r: 0.4383232, g: 0.4383232, b: 0.4716981, a: 0}
-    - _OTHERCOLOR: {r: 0, g: 0, b: 0, a: 0}
-    - _OTHERCOLOR1: {r: 0.5188679, g: 0.4637216, b: 0.3206212, a: 0}
-    - _SCLERACOLOR: {r: 0.9056604, g: 0.8159487, b: 0.8159487, a: 0}
-    - _SCLERACOLOR1: {r: 0.9056604, g: 0.8159487, b: 0.8159487, a: 0}
-    - _SKINCOLOR: {r: 0.745283, g: 0.66442686, b: 0.66442686, a: 0}
-    - _SKINCOLOR1: {r: 2.02193, g: 1.0081, b: 0.6199315, a: 0}
-  m_BuildTextureStacks: []
 --- !u!137 &327858782233646134 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3142377169840947443, guid: 5b1f79dda76cb5c498c34f02ea3e78e4, type: 3}
@@ -1436,7 +1473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5218915195672700686, guid: 5b1f79dda76cb5c498c34f02ea3e78e4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5440654401288722954, guid: 5b1f79dda76cb5c498c34f02ea3e78e4, type: 3}
       propertyPath: m_Enabled
@@ -1530,13 +1567,11 @@ MonoBehaviour:
     - {fileID: 3596901834869687125}
   material:
     assets:
-    - {fileID: 2100000, guid: acf7c657e3cad46e497b0622e9cccc8f, type: 2}
     - {fileID: 2100000, guid: c79855c6f54ed954293d041acc3120a8, type: 2}
     - {fileID: 2100000, guid: c3e7c45df5562ab4e986ba0da235b36b, type: 2}
     - {fileID: 2100000, guid: 30a2e2fb0ea96494f946f44c595754bc, type: 2}
     - {fileID: 2100000, guid: a803dca6c7758524c89a1606f9776a29, type: 2}
     - {fileID: 2100000, guid: a34ffd8251f52174b89ec7c4e3d78e21, type: 2}
-    - {fileID: 2100000, guid: 6e65dbc213c144e73899b83fbd3c3892, type: 2}
     instance: {fileID: 1411120147}
     index: 0
   loaded: 1
@@ -1630,60 +1665,3 @@ SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6430812830992272982, guid: 5b1f79dda76cb5c498c34f02ea3e78e4, type: 3}
   m_PrefabInstance: {fileID: 3393249771042739397}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &9004720593124821951
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.135
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379663, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9004720594014379665, guid: a409eff7b5b414300ba098c11c456944, type: 3}
-      propertyPath: m_Name
-      value: Cedric
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a409eff7b5b414300ba098c11c456944, type: 3}
