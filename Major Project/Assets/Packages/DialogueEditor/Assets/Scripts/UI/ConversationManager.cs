@@ -35,8 +35,10 @@ namespace DialogueEditor
         public float ScrollSpeed = 1;
         public Sprite BackgroundImage;
         public bool BackgroundImageSliced;
+        [SerializeField] public Color BackgroundColour;
         public Sprite OptionImage;
         public bool OptionImageSliced;
+        [SerializeField] public Color OptionColour;
         public bool AllowMouseInteraction;
 
         // Non-User facing 
@@ -270,7 +272,7 @@ namespace DialogueEditor
                     m_selectedOption = null;
                     break;
                 case eState.TransitioningDialogueBoxOn:
-                    SetColorAlpha(DialogueBackground, 1);
+                    SetColorAlpha(DialogueBackground, BackgroundColour.a);
                     SetColorAlpha(NpcIcon, 1);
                     SetColorAlpha(NameText, 1);
                     break;
@@ -333,7 +335,7 @@ namespace DialogueEditor
                 return;
             }
 
-            SetColorAlpha(DialogueBackground, t);
+            SetColorAlpha(DialogueBackground, t * BackgroundColour.a);
             SetColorAlpha(NpcIcon, t);
             SetColorAlpha(NameText, t);
         }
@@ -443,7 +445,7 @@ namespace DialogueEditor
                 return;
             }
 
-            SetColorAlpha(DialogueBackground, 1 - t);
+            SetColorAlpha(DialogueBackground, BackgroundColour.a - t);
             SetColorAlpha(NpcIcon, 1 - t);
             SetColorAlpha(NameText, 1 - t);
         }
@@ -637,6 +639,7 @@ namespace DialogueEditor
                     DialogueBackground.type = Image.Type.Sliced;
                 else
                     DialogueBackground.type = Image.Type.Simple;
+                DialogueBackground.color = BackgroundColour;
             }
 
             NpcIcon.sprite = BlankSprite;
@@ -706,7 +709,7 @@ namespace DialogueEditor
             for (int i = 0; i < m_uiOptions.Count; i++)
             {
                 m_uiOptions[i].SetImage(OptionImage, OptionImageSliced);
-                m_uiOptions[i].SetAlpha(0);
+                m_uiOptions[i].SetAlpha(OptionColour.a);
                 m_uiOptions[i].gameObject.SetActive(false);
             }
         }

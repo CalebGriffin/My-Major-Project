@@ -25,6 +25,7 @@ namespace DialogueEditor
 
         // UI Elements
         [SerializeField] private TMPro.TextMeshProUGUI TextMesh = null;
+        private string m_text = null;
         [SerializeField] private Image OptionBackgroundImage = null;
         private RectTransform m_rect;
 
@@ -36,7 +37,7 @@ namespace DialogueEditor
         private float m_hoverT = 0.0f;
         private eHoverState m_hoverState;
         private bool Hovering { get { return (m_hoverState == eHoverState.animatingOn || m_hoverState == eHoverState.animatingOff); } }
-        private Vector3 BigSize { get { return Vector3.one * 1.2f; } }
+        private Vector3 BigSize { get { return Vector3.one * 1.05f; } }
 
 
         //--------------------------------------
@@ -67,10 +68,14 @@ namespace DialogueEditor
                 switch (m_hoverState)
                 {
                     case eHoverState.animatingOn:
-                        size = Vector3.Lerp(Vector3.one, BigSize, ease);
+                        //size = Vector3.Lerp(Vector3.one, BigSize, ease);
+                        if (m_buttonType == eButtonType.Option)
+                            TextMesh.text = "\u25b6 " + m_text;
                         break;
                     case eHoverState.animatingOff:
-                        size = Vector3.Lerp(BigSize, Vector3.one, ease);
+                        //size = Vector3.Lerp(BigSize, Vector3.one, ease);
+                        if (m_buttonType == eButtonType.Option)
+                            TextMesh.text = m_text;
                         break;
                 }
 
@@ -145,6 +150,8 @@ namespace DialogueEditor
                     OptionBackgroundImage.type = Image.Type.Sliced;
                 else
                     OptionBackgroundImage.type = Image.Type.Simple;
+                
+                OptionBackgroundImage.color = ConversationManager.Instance.OptionColour;
             }
         }
 
@@ -165,7 +172,7 @@ namespace DialogueEditor
         {
             Color c_image = OptionBackgroundImage.color;
             Color c_text = TextMesh.color;
-            c_image.a = a;
+            c_image.a = ConversationManager.Instance.OptionColour.a;
             c_text.a = a;
             OptionBackgroundImage.color = c_image;
             TextMesh.color = c_text;
@@ -181,6 +188,7 @@ namespace DialogueEditor
                 case eButtonType.Option:
                     {
                         TextMesh.text = node.Text;
+                        m_text = node.Text;
                         TextMesh.font = node.TMPFont;
                     }
                     break;

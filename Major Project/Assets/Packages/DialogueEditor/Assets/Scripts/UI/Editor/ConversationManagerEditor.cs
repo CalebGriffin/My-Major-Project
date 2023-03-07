@@ -17,8 +17,10 @@ namespace DialogueEditor
 
         SerializedProperty BackgroundImageProperty;
         SerializedProperty BackgroundImageSlicedProperty;
+        SerializedProperty BackgroundImageColorProperty;
         SerializedProperty OptionImageProperty;
         SerializedProperty OptionImageSlicedProperty;
+        SerializedProperty OptionColorProperty;
         SerializedProperty ScrollTextProperty;
         SerializedProperty ScrollTextSpeedProperty;
         SerializedProperty AllowMouseInteractionProperty;
@@ -27,8 +29,10 @@ namespace DialogueEditor
         {
             BackgroundImageProperty = serializedObject.FindProperty("BackgroundImage");
             BackgroundImageSlicedProperty = serializedObject.FindProperty("BackgroundImageSliced");
+            BackgroundImageColorProperty = serializedObject.FindProperty("BackgroundColour");
             OptionImageProperty = serializedObject.FindProperty("OptionImage");
             OptionImageSlicedProperty = serializedObject.FindProperty("OptionImageSliced");
+            OptionColorProperty = serializedObject.FindProperty("OptionColour");
             ScrollTextProperty = serializedObject.FindProperty("ScrollText");
             ScrollTextSpeedProperty = serializedObject.FindProperty("ScrollSpeed");
             AllowMouseInteractionProperty = serializedObject.FindProperty("AllowMouseInteraction");
@@ -51,12 +55,14 @@ namespace DialogueEditor
             GUILayout.Label("Dialogue Image Options", EditorStyles.boldLabel);
             EditorGUILayout.PropertyField(BackgroundImageProperty);
             EditorGUILayout.PropertyField(BackgroundImageSlicedProperty); 
+            EditorGUILayout.PropertyField(BackgroundImageColorProperty);
             EditorGUILayout.Space();
 
             // Option image
             GUILayout.Label("Dialogue Image Options", EditorStyles.boldLabel);
             EditorGUILayout.PropertyField(OptionImageProperty);
             EditorGUILayout.PropertyField(OptionImageSlicedProperty);
+            EditorGUILayout.PropertyField(OptionColorProperty);
             EditorGUILayout.Space();
 
             // Text
@@ -86,7 +92,7 @@ namespace DialogueEditor
             if (t.BackgroundImage == null)
             {
                 boxRect = new Rect(contextRect.x + contextRect.width * 0.125f, contextRect.y + 10, width, height);
-                EditorGUI.DrawRect(boxRect, Color.black);
+                EditorGUI.DrawRect(boxRect, BackgroundImageColorProperty.colorValue);
             }
             else
             {
@@ -142,7 +148,7 @@ namespace DialogueEditor
             optionTextRect.y += OPTION_TEXT_BUF_Y;
             if (t.OptionImage == null)
             {
-                EditorGUI.DrawRect(optionRect, Color.black);
+                EditorGUI.DrawRect(optionRect, OptionColorProperty.colorValue);
             }
             else
             {
