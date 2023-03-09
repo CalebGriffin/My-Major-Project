@@ -70,10 +70,10 @@ public class ItemMenuUI : MonoBehaviour
         {
             menuOpen = true;
             inventoryUI.UpdateInventoryUI();
+            collectiblesUI.UpdateCollectiblesUI();
             currentItemSlot.Highlight();
             AnimateItemMenuUIIn();
-            string newActionMap = playerControls.UI.ToString().Replace("PlayerControls+", "").Replace("Actions", "");
-            playerInput.SwitchCurrentActionMap(newActionMap);
+            playerInput.SwitchCurrentActionMap(GRefs.Instance.UIActionMap);
         }
     }
 
@@ -93,8 +93,7 @@ public class ItemMenuUI : MonoBehaviour
         LeanTween.moveLocalY(itemMenuObject, -1000, itemMenuAnimationTime).setEaseInCirc();
         LeanTween.scale(itemMenuObject, Vector3.zero, itemMenuAnimationTime).setEaseInBack().setOnComplete(() =>
         {
-            string newActionMap = playerControls.Player.ToString().Replace("PlayerControls+", "").Replace("Actions", "");
-            playerInput.SwitchCurrentActionMap(newActionMap);
+            playerInput.SwitchCurrentActionMap(GRefs.Instance.PlayerActionMap);
         });
     }
 

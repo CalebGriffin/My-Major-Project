@@ -7,31 +7,10 @@ using TMPro;
 
 public class InventoryUI : MonoBehaviour
 {
-    private Dictionary<ItemData, int> prevItems = new Dictionary<ItemData, int>();
     private ItemData[] prevItemsKeysArray;
     private int[] prevItemsValuesArray;
 
     [SerializeField] private GameObject[] itemSlots = new GameObject[30];
-
-    [SerializeField] private TextMeshProUGUI currentItemText;
-
-    private int currentItemIndex = 0;
-    private int previousItemIndex = 0;
-
-    private Color selectedColor = new Color(0.5f, 0.5f, 0.5f, 0.5f);
-    private Color deselectedColor = new Color(0, 0, 0, 0.5f);
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void UpdateInventoryUI()
     {

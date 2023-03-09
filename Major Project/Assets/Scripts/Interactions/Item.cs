@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(Outline))]
+[RequireComponent(typeof(Outline), typeof(Collider))]
 public class Item : Interactable
 {
     // Inventory Stuff
-    [SerializeField] ItemData itemData;
+    [SerializeField] protected ItemData itemData;
     
     // GameObject Stuff
-    [SerializeField] private Outline outline;
-    [SerializeField] private GameObject nameCanvas;
-    [SerializeField] private TextMeshProUGUI nameText;
-    private Vector3 nameCanvasScale = new Vector3(0.0005f, 0.0005f, 1f);
-    private float nameCanvasScaleTime = 0.2f;
-    private float waitTime = 0.5f;
-    private bool canvasEnabled = false;
+    [SerializeField] protected Outline outline;
+    [SerializeField] protected GameObject nameCanvas;
+    [SerializeField] protected TextMeshProUGUI nameText;
+    protected Vector3 nameCanvasScale = new Vector3(0.0005f, 0.0005f, 1f);
+    protected float nameCanvasScaleTime = 0.2f;
+    protected float waitTime = 0.5f;
+    protected bool canvasEnabled = false;
 
     // Collection Animation Stuff
-    private float collectHeight = 0.3f;
-    private float collectAnimationTime = 0.3f;
+    protected float collectHeight = 0.3f;
+    protected float collectAnimationTime = 0.3f;
     
     void Awake()
     {
@@ -28,18 +28,6 @@ public class Item : Interactable
         nameText.text = itemData.ItemName;
         nameCanvas.transform.localScale = Vector3.zero;
         nameCanvas.SetActive(false);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     override protected void OnLook(int id)
@@ -82,12 +70,13 @@ public class Item : Interactable
     // Can be overridden to play a different animation
     virtual protected void Collect()
     {
-        GameObject.Instantiate(itemData.ItemParticles, transform.position, Quaternion.Euler(-90, 0, 0));
+        if (itemData.ItemParticles != null)
+            GameObject.Instantiate(itemData.ItemParticles, transform.position, Quaternion.Euler(-90, 0, 0));
         LeanTween.scale(gameObject, Vector3.zero, collectAnimationTime).setOnComplete(() => Destroy(gameObject));
         LeanTween.moveLocalY(gameObject, transform.localPosition.y + collectHeight, collectAnimationTime);
     }
 
-    private IEnumerator ShowCanvas()
+    protected IEnumerator ShowCanvas()
     {
         Debug.Log("ShowCanvas");
         canvasEnabled = true;
@@ -99,7 +88,7 @@ public class Item : Interactable
         LeanTween.scale(nameCanvas, nameCanvasScale, nameCanvasScaleTime);
     }
 
-    private void HideCanvas()
+    protected void HideCanvas()
     {
         Debug.Log("HideCanvas");
         canvasEnabled = false;
