@@ -70,7 +70,7 @@ namespace DialogueEditor
                     case eHoverState.animatingOn:
                         //size = Vector3.Lerp(Vector3.one, BigSize, ease);
                         if (m_buttonType == eButtonType.Option)
-                            TextMesh.text = "\u25b6 " + m_text;
+                            TextMesh.text = "\u25b6 " + m_text + " \u25c0";
                         break;
                     case eHoverState.animatingOff:
                         //size = Vector3.Lerp(BigSize, Vector3.one, ease);
@@ -195,14 +195,14 @@ namespace DialogueEditor
 
                 case eButtonType.Speech:
                     {
-                        TextMesh.text = "Continue.";
+                        TextMesh.text = "Continue";
                         TextMesh.font = continueFont;
                     }
                     break;
 
                 case eButtonType.End:
                     {
-                        TextMesh.text = "End.";
+                        TextMesh.text = "Goodbye";
                         TextMesh.font = endFont;
                     }
                     break;

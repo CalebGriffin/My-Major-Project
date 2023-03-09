@@ -290,9 +290,36 @@
             "id": "9e23e8fd-0156-4e9e-b31a-31961fccb746",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "NextOption",
                     "type": "Button",
                     "id": "28d14972-7ba1-4856-a435-c6445d4b3c8d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PrevOption",
+                    "type": "Button",
+                    "id": "84ae7448-a40c-4281-ac17-79a1ba56670f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectOption",
+                    "type": "Button",
+                    "id": "7c1d62c9-b168-4b05-86c2-077b562be07c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "EndConversation",
+                    "type": "Button",
+                    "id": "b63b616b-bd5b-4a78-acd7-7617933fb0e4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -303,11 +330,44 @@
                 {
                     "name": "",
                     "id": "51ca6661-a41d-4134-8c66-47c2bb72ac72",
-                    "path": "",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "NextOption",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2564d17d-54a7-4fc2-b2af-233722f6c8f9",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrevOption",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88f6cbf4-11dc-4ddd-a7c0-b6ef02c00383",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectOption",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bde3b366-32fd-4a46-be86-58988eb85e49",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EndConversation",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

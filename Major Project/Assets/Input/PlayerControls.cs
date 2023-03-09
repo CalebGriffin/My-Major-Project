@@ -312,9 +312,36 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""9e23e8fd-0156-4e9e-b31a-31961fccb746"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""NextOption"",
                     ""type"": ""Button"",
                     ""id"": ""28d14972-7ba1-4856-a435-c6445d4b3c8d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PrevOption"",
+                    ""type"": ""Button"",
+                    ""id"": ""84ae7448-a40c-4281-ac17-79a1ba56670f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectOption"",
+                    ""type"": ""Button"",
+                    ""id"": ""7c1d62c9-b168-4b05-86c2-077b562be07c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EndConversation"",
+                    ""type"": ""Button"",
+                    ""id"": ""b63b616b-bd5b-4a78-acd7-7617933fb0e4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -325,11 +352,44 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""51ca6661-a41d-4134-8c66-47c2bb72ac72"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""NextOption"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2564d17d-54a7-4fc2-b2af-233722f6c8f9"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrevOption"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88f6cbf4-11dc-4ddd-a7c0-b6ef02c00383"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectOption"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bde3b366-32fd-4a46-be86-58988eb85e49"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EndConversation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -381,7 +441,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_UI_RemoveSelectedItem = m_UI.FindAction("RemoveSelectedItem", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
-        m_Dialogue_Newaction = m_Dialogue.FindAction("New action", throwIfNotFound: true);
+        m_Dialogue_NextOption = m_Dialogue.FindAction("NextOption", throwIfNotFound: true);
+        m_Dialogue_PrevOption = m_Dialogue.FindAction("PrevOption", throwIfNotFound: true);
+        m_Dialogue_SelectOption = m_Dialogue.FindAction("SelectOption", throwIfNotFound: true);
+        m_Dialogue_EndConversation = m_Dialogue.FindAction("EndConversation", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -563,12 +626,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // Dialogue
     private readonly InputActionMap m_Dialogue;
     private IDialogueActions m_DialogueActionsCallbackInterface;
-    private readonly InputAction m_Dialogue_Newaction;
+    private readonly InputAction m_Dialogue_NextOption;
+    private readonly InputAction m_Dialogue_PrevOption;
+    private readonly InputAction m_Dialogue_SelectOption;
+    private readonly InputAction m_Dialogue_EndConversation;
     public struct DialogueActions
     {
         private @PlayerControls m_Wrapper;
         public DialogueActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Dialogue_Newaction;
+        public InputAction @NextOption => m_Wrapper.m_Dialogue_NextOption;
+        public InputAction @PrevOption => m_Wrapper.m_Dialogue_PrevOption;
+        public InputAction @SelectOption => m_Wrapper.m_Dialogue_SelectOption;
+        public InputAction @EndConversation => m_Wrapper.m_Dialogue_EndConversation;
         public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -578,16 +647,34 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_DialogueActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNewaction;
+                @NextOption.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNextOption;
+                @NextOption.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNextOption;
+                @NextOption.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnNextOption;
+                @PrevOption.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnPrevOption;
+                @PrevOption.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnPrevOption;
+                @PrevOption.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnPrevOption;
+                @SelectOption.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnSelectOption;
+                @SelectOption.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnSelectOption;
+                @SelectOption.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnSelectOption;
+                @EndConversation.started -= m_Wrapper.m_DialogueActionsCallbackInterface.OnEndConversation;
+                @EndConversation.performed -= m_Wrapper.m_DialogueActionsCallbackInterface.OnEndConversation;
+                @EndConversation.canceled -= m_Wrapper.m_DialogueActionsCallbackInterface.OnEndConversation;
             }
             m_Wrapper.m_DialogueActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @NextOption.started += instance.OnNextOption;
+                @NextOption.performed += instance.OnNextOption;
+                @NextOption.canceled += instance.OnNextOption;
+                @PrevOption.started += instance.OnPrevOption;
+                @PrevOption.performed += instance.OnPrevOption;
+                @PrevOption.canceled += instance.OnPrevOption;
+                @SelectOption.started += instance.OnSelectOption;
+                @SelectOption.performed += instance.OnSelectOption;
+                @SelectOption.canceled += instance.OnSelectOption;
+                @EndConversation.started += instance.OnEndConversation;
+                @EndConversation.performed += instance.OnEndConversation;
+                @EndConversation.canceled += instance.OnEndConversation;
             }
         }
     }
@@ -627,6 +714,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public interface IDialogueActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnNextOption(InputAction.CallbackContext context);
+        void OnPrevOption(InputAction.CallbackContext context);
+        void OnSelectOption(InputAction.CallbackContext context);
+        void OnEndConversation(InputAction.CallbackContext context);
     }
 }

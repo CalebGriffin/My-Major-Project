@@ -33,4 +33,18 @@ public class GRefs : MonoBehaviour
 
     [SerializeField] private PlayerControls playerControls;
     public PlayerControls PlayerControls { get { return playerControls; } }
+
+    public string PlayerActionMap { get { return playerControls.Player.ToString().ActionMapStringReplace(); } }
+
+    public string UIActionMap { get { return playerControls.UI.ToString().ActionMapStringReplace(); } }
+
+    public string DialogueActionMap { get { return playerControls.Dialogue.ToString().ActionMapStringReplace(); } }
+}
+
+public static class GRefsExtensions
+{
+    public static string ActionMapStringReplace(this string str)
+    {
+        return str.Replace("PlayerControls+", "").Replace("Actions", "");
+    }
 }
