@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c692b2611ec0e40e6998be4244d20540, type: 3}
-  m_Name: Small Branch
+  m_Script: {fileID: 11500000, guid: 6661bdecf45024dd1a2662811e52491a, type: 3}
+  m_Name: Camera
   m_EditorClassIdentifier: 
-  itemName: Small Branch
-  itemSprite: {fileID: 21300000, guid: 6ee4a71f1305248bea6d94e9965c2e0c, type: 3}
+  itemName: ???
+  itemSprite: {fileID: 21300000, guid: 472e49d56ee4742d182fb7a648c85f3d, type: 3}
   itemParticles: {fileID: 0}
-  isTradeable: 1
-  itemType: 0
+  isTradeable: 0
+  itemType: 2
+  actualName: Camera
