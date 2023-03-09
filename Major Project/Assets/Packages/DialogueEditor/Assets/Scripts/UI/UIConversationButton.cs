@@ -28,6 +28,7 @@ namespace DialogueEditor
         private string m_text = null;
         [SerializeField] private Image OptionBackgroundImage = null;
         private RectTransform m_rect;
+        [SerializeField] private GameObject arrowParent = null;
 
         // Node data
         private eButtonType m_buttonType;
@@ -70,12 +71,14 @@ namespace DialogueEditor
                     case eHoverState.animatingOn:
                         //size = Vector3.Lerp(Vector3.one, BigSize, ease);
                         if (m_buttonType == eButtonType.Option)
-                            TextMesh.text = "\u25b6 " + m_text + " \u25c0";
+                            arrowParent.SetActive(true);
+                            //TextMesh.text = "\u25b6 " + m_text + " \u25c0";
                         break;
                     case eHoverState.animatingOff:
                         //size = Vector3.Lerp(BigSize, Vector3.one, ease);
                         if (m_buttonType == eButtonType.Option)
-                            TextMesh.text = m_text;
+                            arrowParent.SetActive(false);
+                            //TextMesh.text = m_text;
                         break;
                 }
 
