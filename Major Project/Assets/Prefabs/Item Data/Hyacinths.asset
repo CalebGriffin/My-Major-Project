@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c692b2611ec0e40e6998be4244d20540, type: 3}
-  m_Name: Roses
+  m_Name: Hyacinths
   m_EditorClassIdentifier: 
-  itemName: Roses
-  itemSprite: {fileID: 21300000, guid: b1ffb43d5a043491489ee6b6bc7fb56a, type: 3}
+  itemName: Hyacinths
+  itemSprite: {fileID: 21300000, guid: 10b150d986ddc43cfbcd1372c7f47823, type: 3}
   itemParticles: {fileID: 1899716494819337161, guid: cda6c346a223a4fd8affb5a6e4a3c18a, type: 3}
   isTradeable: 1
   itemType: 0
