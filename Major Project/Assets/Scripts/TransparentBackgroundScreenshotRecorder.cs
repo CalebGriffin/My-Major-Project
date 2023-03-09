@@ -86,14 +86,11 @@ blackCam.backgroundColor=Color.black;
 blackCamGameObject.transform.SetParent(gameObject.transform, true);
 }
 void CreateNewFolderForScreenshots (){
-// Find a folder name that doesn't exist yet. Append number if necessary.
+// If the folder doesn't exist, create it
+if (!System.IO.Directory.Exists (folderBaseName)) {
+System.IO.Directory.CreateDirectory (folderBaseName);
+}
 folderName = folderBaseName;
-int count = 1;
-while (System.IO.Directory.Exists (folderName)) {
-folderName = folderBaseName + count;
-count++;
-  }
-System.IO.Directory.CreateDirectory (folderName); // Create the folder
 }
 void WriteScreenImageToTexture (Texture2D tex){
 tex.ReadPixels (new Rect (0, 0, screenWidth, screenHeight), 0, 0);
