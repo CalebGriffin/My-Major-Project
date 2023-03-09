@@ -1,26 +1,30 @@
 Items (24/30):
+[Common]
 Red Mushroom
 Yellow Mushroom
 Purple Mushroom
-Small Branch
-Log
 Rose
 Daffodil
 Hyacinth
 Orchid
-Coal Ore
-Iron Ore
-Gold Ore
+Leaf
 Apple
 Orange
 Grape
 Banana
+Feather
+
+
+[Uncommon]
+Small Branch
+Log
 Wooden Mug
 Wooden Bowl
 Wooden Bucket
+Coal Ore
+Iron Ore
+Gold Ore
 Wine Bottle
-Leaf
-Feather
 Pottery Jar
 Book
 
@@ -40,4 +44,7 @@ Torch
 Frying Pan
 Rubber Duck
 
-Tools (0/6):
+Tools (3/6):
+Spade
+Axe
+Fishing Rod
