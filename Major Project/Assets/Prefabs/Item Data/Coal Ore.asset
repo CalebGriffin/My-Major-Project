@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Coal Ore
   m_EditorClassIdentifier: 
   itemName: Coal Ore
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 67e4288b6f12846a7b17f831e6a8dd3e, type: 3}
   itemParticles: {fileID: 0}
   isTradeable: 1
   itemType: 0
