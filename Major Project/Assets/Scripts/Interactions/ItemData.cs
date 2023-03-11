@@ -29,4 +29,7 @@ public class ItemData : ScriptableObject
 
     public virtual void Collect()
     {}
+
+    public virtual void Reset()
+    {}
 }

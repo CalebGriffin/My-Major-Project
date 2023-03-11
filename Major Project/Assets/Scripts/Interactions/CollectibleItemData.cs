@@ -12,4 +12,9 @@ public class CollectibleItemData : ItemData
     {
         ItemName = actualName;
     }
+
+    public override void Reset()
+    {
+        ItemName = "???";
+    }
 }
