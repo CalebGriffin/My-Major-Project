@@ -5842,6 +5842,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8393882896817357393, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 970e4c919e96b480fbba3d84539c6dbb, type: 2}
     - target: {fileID: 8393882896817357394, guid: 676df23f281254033b6b6811737dd593, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -15129,7 +15133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &9004720593838862287
 Animator:
   serializedVersion: 5
