@@ -574,7 +574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186233313534555122, guid: 0da600d002dc6404693c3b74e0265a3c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6814573785498937672, guid: 0da600d002dc6404693c3b74e0265a3c, type: 3}
       propertyPath: m_RootOrder
@@ -869,7 +869,7 @@ PrefabInstance:
       objectReference: {fileID: 567622030}
     - target: {fileID: -2236950594083700581, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2236950594083700581, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -893,7 +893,7 @@ PrefabInstance:
       objectReference: {fileID: 567622030}
     - target: {fileID: 1335901820717818729, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1335901820717818729, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -909,7 +909,7 @@ PrefabInstance:
       objectReference: {fileID: 567622030}
     - target: {fileID: 5997941876497436660, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5997941876497436660, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -917,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 567622030}
     - target: {fileID: 6981583533346751470, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6981583533346751470, guid: 32e8b022da3e1124e89a6a071df4f44f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1008,12 +1008,12 @@ MonoBehaviour:
     idx: 0
     list: []
   - type: upper
-    idx: 0
+    idx: 1
     list:
     - {fileID: 1230363772}
     - {fileID: 1230363771}
   - type: lower
-    idx: 0
+    idx: 2
     list:
     - {fileID: 1230363770}
     - {fileID: 1230363769}
