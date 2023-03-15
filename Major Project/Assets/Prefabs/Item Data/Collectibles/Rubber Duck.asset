@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rubber Duck
   m_EditorClassIdentifier: 
   itemName: ???
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 75e359cf998f14a449bf9cd4f1426e35, type: 3}
   itemParticles: {fileID: 0}
   isTradeable: 0
   itemType: 2
