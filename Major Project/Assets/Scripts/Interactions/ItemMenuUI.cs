@@ -56,6 +56,14 @@ public class ItemMenuUI : MonoBehaviour
         removeSelectedItemAction.performed += RemoveSelectedItem;
     }
 
+    private void OnDisable()
+    {
+        itemMenuEnableAction.performed -= ItemMenuToggle;
+        itemMenuDisableAction.performed -= ItemMenuToggle;
+        moveItemSelectionAction.performed -= OnMoveItemActionPerformed;
+        removeSelectedItemAction.performed -= RemoveSelectedItem;
+    }
+
     private void ItemMenuToggle(InputAction.CallbackContext context)
     {
         if (menuOpen)

@@ -40,6 +40,15 @@ public class DialogueController : MonoBehaviour
         ConversationManager.OnConversationEnded += () => playerInput.SwitchCurrentActionMap(GRefs.Instance.PlayerActionMap);
     }
 
+    private void OnDisable()
+    {
+        nextOptionAction.performed -= NextOption;
+        prevOptionAction.performed -= PrevOption;
+        selectOptionAction.performed -= SelectOption;
+        endConversationAction.performed -= EndConversation;
+        ConversationManager.OnConversationEnded -= () => playerInput.SwitchCurrentActionMap(GRefs.Instance.PlayerActionMap);
+    }
+
     // Update is called once per frame
     void Update()
     {

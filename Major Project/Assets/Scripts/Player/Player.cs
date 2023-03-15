@@ -36,6 +36,11 @@ public class Player : MonoBehaviour
         cameraTransform = GRefs.Instance.PlayerCameraTransform;
     }
 
+    private void OnDisable()
+    {
+        interactAction.performed -= Interact;
+    }
+
     // Update is called once per frame
     void Update()
     {
