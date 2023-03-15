@@ -1531,7 +1531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &280288262
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3895,7 +3895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -40
+      value: -39.99994
       objectReference: {fileID: 0}
     - target: {fileID: 3900108754347413305, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
       propertyPath: m_text
@@ -8273,7 +8273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1170062930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8321,7 +8321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1170233868
 Transform:
   m_ObjectHideFlags: 0
@@ -11458,8 +11458,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentIDCounter: 6
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":315.5,"yPos":90},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Cedric","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":315,"yPos":229},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
+  CurrentIDCounter: 9
+  json: '{"Options":[{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":127,"yPos":310},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"Option
+    1","parentUIDs":[1],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":340,"yPos":314},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Option
+    2","parentUIDs":[1],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":550,"yPos":313},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"Option
+    3","parentUIDs":[1],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":300.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Cedric","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":6},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":7},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":300,"yPos":161},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
     there, stranger. I''m Cedric, the local blacksmith.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Cedric","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Cedric
@@ -11468,6 +11471,9 @@ MonoBehaviour:
   NodeSerializedDataList:
   - {fileID: 2068196164}
   - {fileID: 2068196166}
+  - {fileID: 2068196169}
+  - {fileID: 2068196168}
+  - {fileID: 2068196167}
   ContinueFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
   EndConversationFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
   Event:
@@ -13106,6 +13112,9 @@ GameObject:
   - component: {fileID: 2068196165}
   - component: {fileID: 2068196164}
   - component: {fileID: 2068196166}
+  - component: {fileID: 2068196169}
+  - component: {fileID: 2068196168}
+  - component: {fileID: 2068196167}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -13165,6 +13174,63 @@ MonoBehaviour:
   NodeID: 1
   TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
   Icon: {fileID: 21300000, guid: 5fc4b4bf0fea34a609478447c14822b0, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &2068196167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068196163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 8
+  TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &2068196168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068196163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 7
+  TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!114 &2068196169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068196163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 6
+  TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
+  Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!4 &2133732543 stripped
 Transform:
@@ -13592,7 +13658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1284164088912558
 GameObject:
   m_ObjectHideFlags: 0
@@ -15534,7 +15600,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993554664147381068}
-  m_LocalRotation: {x: 0.20891792, y: -0.72941685, z: -0.12304404, w: 0.6396598}
+  m_LocalRotation: {x: 0.20891789, y: -0.7294168, z: -0.12304402, w: 0.63965976}
   m_LocalPosition: {x: -0.06580364, y: 0.003045719, z: -0.06567929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19258,7 +19324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1280013398209666799
 Animator:
   serializedVersion: 5
@@ -20557,7 +20623,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519251075873777704}
-  m_LocalRotation: {x: 0.023698647, y: 0.023616062, z: 0.047987882, w: 0.99828744}
+  m_LocalRotation: {x: 0.023698648, y: 0.023616064, z: 0.047987886, w: 0.9982875}
   m_LocalPosition: {x: -0.012281923, y: -0.21022023, z: -0.01129054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21423,7 +21489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &3141103598138006517
 Animator:
   serializedVersion: 5
@@ -25993,7 +26059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &4884387802906507593
 GameObject:
   m_ObjectHideFlags: 0
@@ -28370,7 +28436,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9007384094928564308}
-  m_LocalRotation: {x: 0.023698647, y: 0.023616062, z: 0.047987882, w: 0.99828744}
+  m_LocalRotation: {x: 0.023698648, y: 0.023616064, z: 0.047987886, w: 0.9982875}
   m_LocalPosition: {x: 0.012281531, y: 0.21022008, z: 0.011293808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28811,7 +28877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &8952376910550718588
 CapsuleCollider:
   m_ObjectHideFlags: 0
