@@ -8,7 +8,6 @@ using TMPro;
 public class CollectiblesUI : MonoBehaviour
 {
     private ItemData[] prevItemsKeysArray;
-    private int[] prevItemsValuesArray;
 
     [SerializeField] private GameObject[] itemSlots = new GameObject[18];
 
@@ -38,16 +37,14 @@ public class CollectiblesUI : MonoBehaviour
     private bool CollectiblesChanged()
     {
         ItemData[] currentItemsKeysArray = CollectibleStorage.Instance.Items.Keys.ToArray();
-        int[] currentItemsValuesArray = CollectibleStorage.Instance.Items.Values.ToArray();
 
-        if (prevItemsKeysArray == currentItemsKeysArray && prevItemsValuesArray == currentItemsValuesArray)
+        if (prevItemsKeysArray == currentItemsKeysArray)
         {
             return false;
         }
         else
         {
             prevItemsKeysArray = currentItemsKeysArray;
-            prevItemsValuesArray = currentItemsValuesArray;
             return true;
         }
     }

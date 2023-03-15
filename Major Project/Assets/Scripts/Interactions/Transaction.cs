@@ -41,10 +41,11 @@ public class Transaction : ScriptableObject
                 Inventory.Instance.AddItem(rewardItem.Item, rewardItem.Amount);
                 break;
             case ItemData.ItemType.Collectible:
-                CollectibleStorage.Instance.AddItem(rewardItem.Item, rewardItem.Amount);
+                CollectibleStorage.Instance.AddItem(rewardItem.Item);
                 rewardItem.Item.Collect();
                 break;
             case ItemData.ItemType.Tool:
+                ToolStorage.Instance.AddItem(rewardItem.Item);
                 break;
             default:
                 break;

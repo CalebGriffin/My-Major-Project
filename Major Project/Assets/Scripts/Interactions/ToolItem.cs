@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class CollectibleItem : Item
+public class ToolItem : Item
 {
     protected override void OnInteract(int id)
     {
         if (id != gameObject.GetInstanceID())
             return;
         
-        // Add the item to the collectible storage
-        CollectibleStorage.Instance.AddItem(itemData);
+        // Add the item to the tool storage
+        ToolStorage.Instance.AddItem(itemData);
 
         canvasEnabled = false;
         LeanTween.cancel(nameCanvas);
@@ -28,6 +27,5 @@ public class CollectibleItem : Item
             itemData.Collect();
             Destroy(gameObject);
         });
-
     }
 }

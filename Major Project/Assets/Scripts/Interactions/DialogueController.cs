@@ -21,7 +21,6 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private int chatCount = 0;
 
     [SerializeField] private Transaction[] transactions;
-    [SerializeField] private CollectibleItemData collectibleItemData;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +56,8 @@ public class DialogueController : MonoBehaviour
 
     private void ParameterSetup()
     {
+        if (!spokenToPlayer) return;
+
         // Pick a random response, hint and chat option
         ConversationManager.Instance.SetInt("ResponseChoice", Random.Range(0, responseCount));
         ConversationManager.Instance.SetInt("HintChoice", Random.Range(0, hintCount));
@@ -77,9 +78,16 @@ public class DialogueController : MonoBehaviour
             }
 
             ConversationManager.Instance.SetBool($"HasItems{i}", hasItems);
-        }
 
-        ConversationManager.Instance.SetBool("HasCollectible", CollectibleStorage.Instance.HasItem(collectibleItemData));
+            if (transactions[i].RewardItem.Item.Type == ItemData.ItemType.Collectible)
+            {
+                ConversationManager.Instance.SetBool($"HasUntradable{i}", CollectibleStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+            }
+            else if (transactions[i].RewardItem.Item.Type == ItemData.ItemType.Tool)
+            {
+                ConversationManager.Instance.SetBool($"HasUntradable{i}", ToolStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+            }
+        }
     }
 
     public void Trade(int itemIndex)

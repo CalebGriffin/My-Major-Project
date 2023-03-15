@@ -159,7 +159,7 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  collectibleItemData: {fileID: 0}
+  nonTradableItems: []
 --- !u!114 &61
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +621,64 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3900108755196472087, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
   m_PrefabInstance: {fileID: 559603597}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &56353709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 56353710}
+  - component: {fileID: 56353711}
+  m_Layer: 0
+  m_Name: MAIN CONVERSATION
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &56353710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56353709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1625647861}
+  m_Father: {fileID: 9004720593838862288}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &56353711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56353709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentIDCounter: 9
+  json: '{"Options":[],"Parameters":[{"__type":"EditableIntParameter:#DialogueEditor","ParameterName":"ResponseChoice","IntValue":0},{"__type":"EditableIntParameter:#DialogueEditor","ParameterName":"HintChoice","IntValue":0},{"__type":"EditableIntParameter:#DialogueEditor","ParameterName":"ChatChoice","IntValue":0}],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":300.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Cedric","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0}]}'
+  saveVersion: 110
+  DefaultName: Cedric
+  DefaultSprite: {fileID: 21300000, guid: 5fc4b4bf0fea34a609478447c14822b0, type: 3}
+  DefaultFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
+  NodeSerializedDataList:
+  - {fileID: 1625647862}
+  ContinueFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &63226480
 GameObject:
   m_ObjectHideFlags: 0
@@ -10801,6 +10859,57 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!1 &1625647860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625647861}
+  - component: {fileID: 1625647862}
+  m_Layer: 0
+  m_Name: ConversationEventInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1625647861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625647860}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 56353710}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1625647862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625647860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 0
+  TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
+  Icon: {fileID: 21300000, guid: 5fc4b4bf0fea34a609478447c14822b0, type: 3}
+  Audio: {fileID: 0}
 --- !u!1001 &1629501104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11503,21 +11612,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 9
-  json: '{"Options":[{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":127,"yPos":310},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"Option
-    1","parentUIDs":[1],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":340,"yPos":314},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"Option
-    2","parentUIDs":[1],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":550,"yPos":313},"ID":8,"ParamActions":[],"TMPFontGUID":null,"Text":"Option
-    3","parentUIDs":[1],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":300.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Cedric","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":6},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":7},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":8}],"EditorInfo":{"isRoot":false,"xPos":300,"yPos":161},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
-    there, stranger. I''m Cedric, the local blacksmith.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Cedric","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":306.5,"yPos":61},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Hey
+    there, stranger. I''m Cedric, the local blacksmith.","parentUIDs":[],"AdvanceDialogueAutomatically":true,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Cedric","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Cedric
   DefaultSprite: {fileID: 21300000, guid: 5fc4b4bf0fea34a609478447c14822b0, type: 3}
   DefaultFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
   NodeSerializedDataList:
   - {fileID: 2068196164}
-  - {fileID: 2068196166}
-  - {fileID: 2068196169}
-  - {fileID: 2068196168}
-  - {fileID: 2068196167}
   ContinueFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
   EndConversationFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
   Event:
@@ -13155,10 +13257,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2068196165}
   - component: {fileID: 2068196164}
-  - component: {fileID: 2068196166}
-  - component: {fileID: 2068196169}
-  - component: {fileID: 2068196168}
-  - component: {fileID: 2068196167}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -13200,82 +13298,6 @@ Transform:
   m_Father: {fileID: 1711176781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2068196166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068196163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 1
-  TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
-  Icon: {fileID: 21300000, guid: 5fc4b4bf0fea34a609478447c14822b0, type: 3}
-  Audio: {fileID: 0}
---- !u!114 &2068196167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068196163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 8
-  TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
---- !u!114 &2068196168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068196163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 7
-  TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
---- !u!114 &2068196169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2068196163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-    m_PersistentCalls:
-      m_Calls: []
-  NodeID: 6
-  TMPFont: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
-  Icon: {fileID: 0}
-  Audio: {fileID: 0}
 --- !u!4 &2133732543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9015779575219558518, guid: 39791ecfeb91e413982d881a6539ac6b, type: 3}
@@ -15768,7 +15790,7 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  collectibleItemData: {fileID: 0}
+  nonTradableItems: []
 --- !u!114 &95690507979282258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19435,7 +19457,7 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  collectibleItemData: {fileID: 0}
+  nonTradableItems: []
 --- !u!114 &1280013398209666803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21616,7 +21638,7 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  collectibleItemData: {fileID: 0}
+  nonTradableItems: []
 --- !u!114 &3141103598138006522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26355,7 +26377,7 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  collectibleItemData: {fileID: 0}
+  nonTradableItems: []
 --- !u!114 &5242344855583945534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28968,7 +28990,7 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  collectibleItemData: {fileID: 0}
+  nonTradableItems: []
 --- !u!114 &8952376910550718591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30937,6 +30959,7 @@ Transform:
   m_Children:
   - {fileID: 702230346843484760}
   - {fileID: 1711176781}
+  - {fileID: 56353710}
   m_Father: {fileID: 1930877451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
