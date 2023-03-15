@@ -2371,7 +2371,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 11400000, guid: e38df175ccac049a580d6bd5843f5f63, type: 2}
+  m_spriteAsset: {fileID: 11400000, guid: cc9d083a14caa445383a6dd0eea5aa69, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -3301,7 +3301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3440,7 +3440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5634,6 +5634,50 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
+      value: 84ae7448-a40c-4281-ac17-79a1ba56670f
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: 7c1d62c9-b168-4b05-86c2-077b562be07c
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: b63b616b-bd5b-4a78-acd7-7617933fb0e4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: Dialogue/PrevOption[/Keyboard/a,/DualShock4GamepadHID/dpad/left]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: Dialogue/SelectOption[/Keyboard/space,/DualShock4GamepadHID/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: Dialogue/EndConversation[/Keyboard/q,/DualShock4GamepadHID/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5303427774191599602, guid: 676df23f281254033b6b6811737dd593, type: 3}
+      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5303577884530314405, guid: 676df23f281254033b6b6811737dd593, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6721,7 +6765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7020,7 +7064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9432,7 +9476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11655,7 +11699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

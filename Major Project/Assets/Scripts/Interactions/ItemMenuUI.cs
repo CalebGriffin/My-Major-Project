@@ -54,8 +54,6 @@ public class ItemMenuUI : MonoBehaviour
 
         removeSelectedItemAction = playerInput.actions[playerControls.UI.RemoveSelectedItem.name];
         removeSelectedItemAction.performed += RemoveSelectedItem;
-
-        playerInput.onControlsChanged += UpdateToolTipScheme;
     }
 
     private void ItemMenuToggle(InputAction.CallbackContext context)
@@ -69,6 +67,8 @@ public class ItemMenuUI : MonoBehaviour
         else
         {
             menuOpen = true;
+            UpdateToolTipScheme();
+            MoveItemSelection(Vector2.zero);
             inventoryUI.UpdateInventoryUI();
             collectiblesUI.UpdateCollectiblesUI();
             currentItemSlot.Highlight();
@@ -133,6 +133,8 @@ public class ItemMenuUI : MonoBehaviour
                 case float x when x < 0:
                     currentItemSlot = currentItemSlot.Left;
                     break;
+                default:
+                    break;
             }
         }
         else
@@ -144,6 +146,8 @@ public class ItemMenuUI : MonoBehaviour
                     break;
                 case float y when y < 0:
                     currentItemSlot = currentItemSlot.Down;
+                    break;
+                default:
                     break;
             }
         }
@@ -162,8 +166,11 @@ public class ItemMenuUI : MonoBehaviour
         }
     }
 
-    private void UpdateToolTipScheme(PlayerInput playerInput)
+    private void UpdateToolTipScheme()
     {
+        print(playerInput.currentControlScheme);
+        print(playerControls.KeyboardScheme.name);
+        print(playerControls.GamepadScheme.name);
         if (playerInput.currentControlScheme == playerControls.KeyboardScheme.name)
         {
             keyboardToolTipsObject.SetActive(true);
@@ -171,8 +178,8 @@ public class ItemMenuUI : MonoBehaviour
         }
         else if (playerInput.currentControlScheme == playerControls.GamepadScheme.name)
         {
-            keyboardToolTipsObject.SetActive(true);
-            gamepadToolTipsObject.SetActive(false);
+            keyboardToolTipsObject.SetActive(false);
+            gamepadToolTipsObject.SetActive(true);
         }
         else
         {
