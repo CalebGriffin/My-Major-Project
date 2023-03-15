@@ -159,7 +159,6 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  nonTradableItems: []
 --- !u!114 &61
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8451,6 +8450,7 @@ Transform:
   - {fileID: 1136629082}
   - {fileID: 69342189}
   - {fileID: 231656754}
+  - {fileID: 2114208629}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13298,6 +13298,11 @@ Transform:
   m_Father: {fileID: 1711176781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2114208629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+  m_PrefabInstance: {fileID: 4482728617598869659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2133732543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9015779575219558518, guid: 39791ecfeb91e413982d881a6539ac6b, type: 3}
@@ -15790,7 +15795,6 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  nonTradableItems: []
 --- !u!114 &95690507979282258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19457,7 +19461,6 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  nonTradableItems: []
 --- !u!114 &1280013398209666803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21638,7 +21641,6 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  nonTradableItems: []
 --- !u!114 &3141103598138006522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25945,6 +25947,63 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &4482728617598869659
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1170233868}
+    m_Modifications:
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625513454, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482728616625825446, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
+      propertyPath: m_Name
+      value: Rubber Duck
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8441cd4c1fde34031b6bd855871cfc6c, type: 3}
 --- !u!4 &4515304791940264874
 Transform:
   m_ObjectHideFlags: 0
@@ -26125,7 +26184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &4884387802906507593
 GameObject:
   m_ObjectHideFlags: 0
@@ -26377,7 +26436,6 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  nonTradableItems: []
 --- !u!114 &5242344855583945534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28990,7 +29048,6 @@ MonoBehaviour:
   hintCount: 0
   chatCount: 0
   transactions: []
-  nonTradableItems: []
 --- !u!114 &8952376910550718591
 MonoBehaviour:
   m_ObjectHideFlags: 0
