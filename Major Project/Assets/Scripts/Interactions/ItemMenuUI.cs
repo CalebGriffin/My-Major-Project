@@ -79,6 +79,7 @@ public class ItemMenuUI : MonoBehaviour
             MoveItemSelection(Vector2.zero);
             inventoryUI.UpdateInventoryUI();
             collectiblesUI.UpdateCollectiblesUI();
+            toolsUI.UpdateToolsUI();
             currentItemSlot.Highlight();
             AnimateItemMenuUIIn();
             playerInput.SwitchCurrentActionMap(GRefs.Instance.UIActionMap);
