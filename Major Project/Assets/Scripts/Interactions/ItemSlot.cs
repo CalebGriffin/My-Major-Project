@@ -10,6 +10,7 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] private Color normalColor;
     [SerializeField] private Image image;
 
+    [HideInInspector]
     public ItemData ItemData;
 
     [SerializeField] private TextMeshProUGUI currentItemText;
@@ -47,7 +48,19 @@ public class ItemSlot : MonoBehaviour
         if (ItemData == null)
             currentItemText.text = "Current Item:";
         else
-            currentItemText.text = "Current Item: " + ItemData.ItemName;
+        {
+            int amount = -1;
+
+            if (transform.GetChild(1).GetComponent<TextMeshProUGUI>().text != "")
+                amount = int.Parse(transform.GetChild(1).GetComponent<TextMeshProUGUI>().text);
+            
+            string amountString = amount == -1 ? "" : amount.ToString() + " ";
+
+            currentItemText.text = $"Current Item: {amountString}{ItemData.ItemName}";
+
+            if (amount > 1 && ItemData.ItemName.Substring(ItemData.ItemName.Length - 1) != "s")
+                currentItemText.text += "s";
+        }
 
         isHovering = true;
     }
