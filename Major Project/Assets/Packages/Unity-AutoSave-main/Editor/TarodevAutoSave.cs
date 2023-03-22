@@ -69,6 +69,7 @@ namespace Tarodev {
                 if (!UnityEditorInternal.InternalEditorUtility.isApplicationActive) continue;
 
                 EditorSceneManager.SaveOpenScenes();
+                AssetDatabase.SaveAssets();
                 if (_config.Logging) Debug.Log($"Auto-saved at {DateTime.Now:h:mm:ss tt}");
             }
         }
