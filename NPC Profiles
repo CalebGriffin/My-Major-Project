@@ -7,11 +7,11 @@ Profile: Cedric is a gruff, but dependable blacksmith who is well-respected in t
 Physical Description: Cedric has calloused hands and a muscular build from years of working the forge. He has short, dark hair and a thick beard, and his face is often covered in soot.
 Potential Items: Ores, Toy Digger, Spade
 Transactions:
-2 Red Mushrooms and 1 Leaf -> 1 Iron Ore
-3 Roses -> 1 Gold Ore
-1 Yellow Mushroom and 1 Purple Mushroom -> 1 Coal Ore
-1 Wooden Bucket and 1 Wine Bottle -> Toy Digger
-2 Pottery Jars and 1 Feather -> Spade
+5 Red Mushrooms and 2 Leafs -> 2 Iron Ore
+6 Roses -> 1 Gold Ore
+2 Yellow Mushroom and 2 Purple Mushroom -> 1 Coal Ore
+2 Wooden Buckets and 1 Wine Bottle -> Toy Digger
+2 Pottery Jars and 3 Feathers -> Spade
 Hints:
 Storylines:
 
@@ -26,7 +26,7 @@ Transactions:
 2 Oranges -> 2 Daffodils
 3 Grapes -> 1 Orchid
 1 Banana -> 3 Purple Mushrooms
-1 Book and 1 Log -> Camera
+3 Books and 2 Logs -> Camera
 
 Name: Tobias
 Age: 24
@@ -35,9 +35,10 @@ Profile: Tobias is a stern and disciplined knight. He is fiercely loyal to his k
 Physical Description: Tobias has a muscular build and stands tall with a confident posture. He has short, dark hair that is neatly trimmed and piercing blue eyes. He has a thick beard and moustache that are also well-groomed. His face is marked with a few small scars that hint at his past battles. He wears shining plate armour that is adorned with intricate designs and a long flowing cape of deep green, the colours of his family's crest.
 Potential Items: Wooden Mug, Wine Bottle, Rubber Duck
 Transactions:
-1 Coal Ore -> 1 Wooden Mug
-1 Iron Ore -> 1 Wine Bottle
-2 Gold Ore and 1 Rose -> Rubber Duck
+2 Coal Ore -> 3 Wooden Mugs
+1 Iron Ore -> 2 Wine Bottles
+2 Gold Ore and 3 Roses -> Rubber Duck
+2 Goblets and 1 Wooden Bowl -> 3 Tuna
 
 Name: Edith
 Age: 35
@@ -48,7 +49,9 @@ Potential Items: Pottery Jar, Wooden Bowl, Frying Pan
 Transactions:
 2 Purple Mushrooms -> 1 Pottery Jar
 2 Books -> 3 Wooden Bowls
-2 Hyacinths and 1 Orchid -> Frying Pan
+2 Hyacinths and 3 Orchids -> Frying Pan
+1 Tuna -> 1 Ladle
+2 Carps and 2 Salmon -> Slice of Pizza
 
 Name: Simon
 Age: 8
@@ -56,11 +59,12 @@ Gender: Male
 Profile: Simon is a shy, bookish boy who spends most of his time lost in thought. He loves to read and can often be found with his nose buried in a book. Simon is sensitive and easily overwhelmed, but he has a keen intellect and a vivid imagination.
 Physical Description: Simon has messy blond hair and wears spectacles. He is small for his age and often looks lost in his own thoughts.
 Potential Items: Smartphone, Laptop, Fishing Rod, Fruit
-2 Wooden Bowls and 1 Feather -> Smartphone
-2 Wooden Buckets and 1 Small Branch -> Laptop
-2 Books -> Fishing Rod
-2 Yellow Mushrooms -> 2 Apples
-1 Yellow Mushroom and 1 Purple Mushroom -> 1 Banana
+4 Wooden Bowls and 2 Feathers -> Smartphone
+3 Wooden Buckets and 2 Small Branches -> Laptop
+3 Books -> Fishing Rod
+3 Yellow Mushrooms -> 2 Apples
+1 Yellow Mushroom and 2 Purple Mushrooms -> 1 Banana
+4 Eggs -> 3 Grapes
 
 Name: Marcus
 Age: 56
@@ -69,6 +73,7 @@ Profile: Marcus is a kind and compassionate man, with a gentle and soothing voic
 Physical Description: Marcus has a lean, wiry build, and his face is marked with deep wrinkles that speak of a life of devotion and service. He has short, salt-and-pepper hair that is combed back neatly, and kind brown eyes that seem to twinkle with an inner light. He wears the simple brown robes of his order, and a wooden cross hangs from a cord around his neck.
 Potential Items: Book, Dice, Torch
 Transactions:
-2 Grapes -> 1 Book
+5 Grapes -> 2 Books
 3 Hyacinth -> Dice
 2 Wine Bottles and 1 Leaf -> Torch
+1 Carp and 1 Tuna and 1 Salmon -> 2 Goblets
