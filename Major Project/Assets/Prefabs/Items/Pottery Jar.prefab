@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2575790334484384258}
   - component: {fileID: 2575790334484384261}
   m_Layer: 6
-  m_Name: Vase
+  m_Name: Pottery Jar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
