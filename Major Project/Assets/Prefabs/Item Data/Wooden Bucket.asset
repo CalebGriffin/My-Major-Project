@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wooden Bucket
   m_EditorClassIdentifier: 
   itemName: Wooden Bucket
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: c3cdeaa86786a4938bff1f66e40592f3, type: 3}
   itemParticles: {fileID: 0}
   isTradeable: 1
   itemType: 0
