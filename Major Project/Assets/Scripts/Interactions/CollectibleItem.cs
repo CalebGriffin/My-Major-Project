@@ -23,11 +23,7 @@ public class CollectibleItem : Item
 
     protected override void Collect()
     {
-        LeanTween.scale(gameObject, Vector3.zero, collectAnimationTime).setEaseInBack().setOnComplete(() =>
-        {
-            itemData.Collect();
-            Destroy(gameObject);
-        });
-
+        itemData.Collect();
+        base.Collect();
     }
 }
