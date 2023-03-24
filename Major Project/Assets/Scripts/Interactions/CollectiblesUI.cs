@@ -9,6 +9,8 @@ public class CollectiblesUI : MonoBehaviour
 {
     private ItemData[] prevItemsKeysArray;
 
+    [SerializeField] private Image progressBar;
+    [SerializeField] private TextMeshProUGUI collectiblesFoundText;
     [SerializeField] private GameObject[] itemSlots = new GameObject[18];
 
     public void UpdateCollectiblesUI()
@@ -31,6 +33,10 @@ public class CollectiblesUI : MonoBehaviour
                 itemSlots[i].GetComponent<ItemSlot>().ItemData = CollectibleStorage.Instance.Items.Keys.ToArray()[i];
                 itemSlots[i].transform.GetChild(0).gameObject.SetActive(true);
             }
+
+            // Update the progress bar
+            progressBar.fillAmount = (float)CollectibleStorage.Instance.Items.Count / 18;
+            collectiblesFoundText.text = CollectibleStorage.Instance.Items.Count + "/18";
         }
     }
 
