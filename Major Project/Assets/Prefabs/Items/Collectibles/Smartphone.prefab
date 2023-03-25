@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f32dff9157764b089cc8f49d862a2de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 36a31a79c6e424447a93bb39b441a19a, type: 2}
   outline: {fileID: 4365613152582831761}
   nameCanvas: {fileID: 452900443598688494}
   nameText: {fileID: 452900443480073293}
