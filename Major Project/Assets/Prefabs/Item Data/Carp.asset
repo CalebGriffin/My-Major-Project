@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Carp
   m_EditorClassIdentifier: 
   itemName: Carp
-  itemSprite: {fileID: 21300000, guid: 500319c855ecb43d08dd66fc6039cb05, type: 3}
+  itemSprite: {fileID: 21300000, guid: 796079fe9dea34d52931f7d7eae88074, type: 3}
   itemParticles: {fileID: 0}
   isTradeable: 1
   itemType: 0

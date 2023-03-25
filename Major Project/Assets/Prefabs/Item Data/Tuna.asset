@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tuna
   m_EditorClassIdentifier: 
   itemName: Tuna
-  itemSprite: {fileID: 21300000, guid: cbc1ef47b682845aea0ad9582a9c1aa4, type: 3}
+  itemSprite: {fileID: 21300000, guid: 6a677a281c485455eb964f0776f7430b, type: 3}
   itemParticles: {fileID: 0}
   isTradeable: 1
   itemType: 0

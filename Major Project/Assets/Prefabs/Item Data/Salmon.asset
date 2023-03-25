@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Salmon
   m_EditorClassIdentifier: 
   itemName: Salmon
-  itemSprite: {fileID: 21300000, guid: dc48b320419c64ad0919ced927bb740b, type: 3}
+  itemSprite: {fileID: 21300000, guid: 52239dcb9f5014de5b7d0b4fc18f2463, type: 3}
   itemParticles: {fileID: 0}
   isTradeable: 1
   itemType: 0
