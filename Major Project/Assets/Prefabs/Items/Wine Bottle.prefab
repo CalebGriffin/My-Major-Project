@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2b80b40169b4649b7fdf2e69b0655a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 0}
+  itemData: {fileID: 11400000, guid: c7ae4f575d6964badb2f8769e2e9636c, type: 2}
   outline: {fileID: 3134298617470355319}
   nameCanvas: {fileID: 5229172786902017809}
   nameText: {fileID: 5229172787146462130}
