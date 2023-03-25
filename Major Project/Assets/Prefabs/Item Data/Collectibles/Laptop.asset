@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6661bdecf45024dd1a2662811e52491a, type: 3}
-  m_Name: Smartphone
+  m_Name: Laptop
   m_EditorClassIdentifier: 
   itemName: ???
-  itemSprite: {fileID: 21300000, guid: e2a4cc1030b28426f953bbe5374a6d08, type: 3}
+  itemSprite: {fileID: 21300000, guid: c43ec318e081b4ccb9ee1805ac6fcc43, type: 3}
   itemParticles: {fileID: 0}
   isTradeable: 0
   itemType: 2
-  actualName: Smartphone
+  actualName: Laptop
