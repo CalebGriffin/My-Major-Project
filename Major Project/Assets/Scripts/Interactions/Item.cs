@@ -17,6 +17,7 @@ public class Item : Interactable
     protected float nameCanvasScaleTime = 0.2f;
     protected float waitTime = 0.5f;
     protected bool canvasEnabled = false;
+    protected bool collected = false;
 
     // Collection Animation Stuff
     protected float collectHeight = 0.3f;
@@ -54,6 +55,11 @@ public class Item : Interactable
     {
         if (id != gameObject.GetInstanceID())
             return;
+        
+        if (collected)
+            return;
+        
+        collected = true;
 
         // Add the item to the inventory
         Inventory.Instance.AddItem(this.itemData);
