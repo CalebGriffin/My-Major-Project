@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6558dc6e423f046dcb6337723fb77096, type: 3}
+  m_Name: 4_Torch
+  m_EditorClassIdentifier: 
+  requiredItems:
+  - item: {fileID: 11400000, guid: c7ae4f575d6964badb2f8769e2e9636c, type: 2}
+    amount: 3
+  - item: {fileID: 11400000, guid: 0c243668f39054f45bb80fb3544d3184, type: 2}
+    amount: 4
+  rewardItem:
+    item: {fileID: 11400000, guid: f2bfa49aa906c429187d2644c6232817, type: 2}
+    amount: 0

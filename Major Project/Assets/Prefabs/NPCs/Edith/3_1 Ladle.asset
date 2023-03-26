@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6558dc6e423f046dcb6337723fb77096, type: 3}
+  m_Name: 3_1 Ladle
+  m_EditorClassIdentifier: 
+  requiredItems:
+  - item: {fileID: 11400000, guid: 407a3537a51f6490a8e74802e53ccedf, type: 2}
+    amount: 1
+  rewardItem:
+    item: {fileID: 11400000, guid: 1e68c257d976f4b2d995740e7cc7f255, type: 2}
+    amount: 1

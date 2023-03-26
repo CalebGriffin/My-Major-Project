@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6558dc6e423f046dcb6337723fb77096, type: 3}
+  m_Name: 5_Smartphone
+  m_EditorClassIdentifier: 
+  requiredItems:
+  - item: {fileID: 11400000, guid: 55f80675376d04f69a3e5d8a49cfc739, type: 2}
+    amount: 4
+  - item: {fileID: 11400000, guid: a37723bac28b04c4789bf2d5a29c360d, type: 2}
+    amount: 2
+  rewardItem:
+    item: {fileID: 11400000, guid: 36a31a79c6e424447a93bb39b441a19a, type: 2}
+    amount: 1

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6558dc6e423f046dcb6337723fb77096, type: 3}
+  m_Name: 4_Frying Pan
+  m_EditorClassIdentifier: 
+  requiredItems:
+  - item: {fileID: 11400000, guid: 042700d8a863c40958ff8dede7923583, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: a02fd226f50104555861de087d218ec6, type: 2}
+    amount: 3
+  rewardItem:
+    item: {fileID: 11400000, guid: 00c650bddea4e463a8521a16c4c0b547, type: 2}
+    amount: 1

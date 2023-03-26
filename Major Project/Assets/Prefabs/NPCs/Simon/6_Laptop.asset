@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6558dc6e423f046dcb6337723fb77096, type: 3}
+  m_Name: 6_Laptop
+  m_EditorClassIdentifier: 
+  requiredItems:
+  - item: {fileID: 11400000, guid: dfc91fab572c642fa98142a8ca3b6c26, type: 2}
+    amount: 3
+  - item: {fileID: 11400000, guid: a329a5710222440b5a4e7488c751c90f, type: 2}
+    amount: 4
+  rewardItem:
+    item: {fileID: 11400000, guid: 2f4408c7388d44ab99ab93777795cdc6, type: 2}
+    amount: 1
