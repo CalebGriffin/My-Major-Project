@@ -83,6 +83,13 @@ namespace DialogueEditor
         private List<UIConversationButton> m_uiOptions;
         private int m_currentSelectedIndex;
 
+        public enum eNPC
+        {
+            Cedric, Isabella, Edith, Simon, Marcus, Tobias, NONE
+        }
+
+        public eNPC CurrentNPC = eNPC.NONE;
+
 
         //--------------------------------------
         // Awake, Start, Destroy, Update
@@ -159,6 +166,8 @@ namespace DialogueEditor
         public void EndConversation()
         {
             SetState(eState.TransitioningDialogueOff);
+
+            CurrentNPC = eNPC.NONE;
 
             if (OnConversationEnded != null)
                 OnConversationEnded.Invoke();

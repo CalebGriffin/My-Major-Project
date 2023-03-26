@@ -15,6 +15,7 @@ public class DialogueController : MonoBehaviour
 
     [SerializeField] private NPCConversation introConversation;
     [SerializeField] private NPCConversation mainConversation;
+    [SerializeField] private ConversationManager.eNPC npcName;
     private bool spokenToPlayer = false;
     [SerializeField] private int responseCount = 0;
     [SerializeField] private int hintCount = 0;
@@ -59,6 +60,7 @@ public class DialogueController : MonoBehaviour
     {
         playerInput.SwitchCurrentActionMap(GRefs.Instance.DialogueActionMap);
         ConversationManager.Instance.StartConversation(spokenToPlayer ? mainConversation : introConversation);
+        ConversationManager.Instance.CurrentNPC = npcName;
         ParameterSetup();
         spokenToPlayer = true;
     }
@@ -107,21 +109,25 @@ public class DialogueController : MonoBehaviour
 
     private void NextOption(InputAction.CallbackContext context)
     {
+        if (npcName != ConversationManager.Instance.CurrentNPC) return;
         ConversationManager.Instance.SelectNextOption();
     }
 
     private void PrevOption(InputAction.CallbackContext context)
     {
+        if (npcName != ConversationManager.Instance.CurrentNPC) return;
         ConversationManager.Instance.SelectPreviousOption();
     }
 
     private void SelectOption(InputAction.CallbackContext context)
     {
+        if (npcName != ConversationManager.Instance.CurrentNPC) return;
         ConversationManager.Instance.PressSelectedOption();
     }
 
     private void EndConversation(InputAction.CallbackContext context)
     {
+        if (npcName != ConversationManager.Instance.CurrentNPC) return;
         ConversationManager.Instance.EndConversation();
     }
 }
