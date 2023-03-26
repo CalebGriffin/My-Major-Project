@@ -88,13 +88,14 @@ public class DialogueController : MonoBehaviour
 
             ConversationManager.Instance.SetBool($"HasItems{i}", hasItems);
 
-            if (transactions[i].RewardItem.Item.Type == ItemData.ItemType.Collectible)
+            switch (transactions[i].RewardItem.Item.Type)
             {
-                ConversationManager.Instance.SetBool($"HasUntradable{i}", CollectibleStorage.Instance.HasItem(transactions[i].RewardItem.Item));
-            }
-            else if (transactions[i].RewardItem.Item.Type == ItemData.ItemType.Tool)
-            {
-                ConversationManager.Instance.SetBool($"HasUntradable{i}", ToolStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+                case ItemData.ItemType.Collectible:
+                    ConversationManager.Instance.SetBool($"HasUntradable{i}", CollectibleStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+                    break;
+                case ItemData.ItemType.Tool:
+                    ConversationManager.Instance.SetBool($"HasUntradable{i}", ToolStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+                    break;
             }
         }
     }
