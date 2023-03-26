@@ -22,10 +22,10 @@ Profile: Isabella is a kind-hearted herbalist who is known for her healing abili
 Physical Description: Isabella has long, curly brown hair and bright green eyes. She wears loose-fitting clothing and a simple leather pouch filled with various herbs and plants.
 Potential Items: Plants (Mushrooms, Flowers, Leaf), Camera
 Transactions:
-2 Apples -> 2 Roses
-2 Oranges -> 2 Daffodils
+1 Apple -> 3 Roses
+2 Oranges -> 5 Daffodils
 3 Grapes -> 1 Orchid
-1 Banana -> 3 Purple Mushrooms
+1 Banana -> 4 Purple Mushrooms
 3 Books and 2 Logs -> Camera
 
 Name: Tobias
@@ -36,9 +36,10 @@ Physical Description: Tobias has a muscular build and stands tall with a confide
 Potential Items: Wooden Mug, Wine Bottle, Rubber Duck
 Transactions:
 2 Coal Ore -> 3 Wooden Mugs
+1 Coal Ore and 1 Orchid -> 2 Wooden Buckets
 1 Iron Ore -> 2 Wine Bottles
-2 Gold Ore and 3 Roses -> Rubber Duck
 2 Goblets and 1 Wooden Bowl -> 3 Tuna
+2 Gold Ore and 3 Roses -> Rubber Duck
 
 Name: Edith
 Age: 35
@@ -47,10 +48,10 @@ Profile: Edith is a fiercely independent woman who runs her own bakery. She is a
 Physical Description: Edith has curly red hair and bright blue eyes. She often wears a flour-dusted apron and has a perpetual smile on her face.
 Potential Items: Pottery Jar, Wooden Bowl, Frying Pan
 Transactions:
-2 Purple Mushrooms -> 1 Pottery Jar
-2 Books -> 3 Wooden Bowls
-2 Hyacinths and 3 Orchids -> Frying Pan
+3 Purple Mushrooms and 3 Red Mushrooms -> 1 Pottery Jar
+3 Books -> 2 Wooden Bowls
 1 Tuna -> 1 Ladle
+2 Hyacinths and 3 Orchids -> Frying Pan
 2 Carps and 2 Salmon -> Slice of Pizza
 
 Name: Simon
@@ -59,12 +60,12 @@ Gender: Male
 Profile: Simon is a shy, bookish boy who spends most of his time lost in thought. He loves to read and can often be found with his nose buried in a book. Simon is sensitive and easily overwhelmed, but he has a keen intellect and a vivid imagination.
 Physical Description: Simon has messy blond hair and wears spectacles. He is small for his age and often looks lost in his own thoughts.
 Potential Items: Smartphone, Laptop, Fishing Rod, Fruit
-4 Wooden Bowls and 2 Feathers -> Smartphone
-3 Wooden Buckets and 2 Small Branches -> Laptop
-3 Books -> Fishing Rod
-3 Yellow Mushrooms -> 2 Apples
-1 Yellow Mushroom and 2 Purple Mushrooms -> 1 Banana
+4 Yellow Mushrooms -> 2 Apples
+2 Logs -> 1 Banana
 4 Eggs -> 3 Grapes
+3 Books -> Fishing Rod
+4 Wooden Bowls and 2 Feathers -> Smartphone
+3 Wooden Buckets and 4 Small Branches -> Laptop
 
 Name: Marcus
 Age: 56
@@ -74,6 +75,6 @@ Physical Description: Marcus has a lean, wiry build, and his face is marked with
 Potential Items: Book, Dice, Torch
 Transactions:
 5 Grapes -> 2 Books
-3 Hyacinth -> Dice
-2 Wine Bottles and 1 Leaf -> Torch
 1 Carp and 1 Tuna and 1 Salmon -> 2 Goblets
+3 Hyacinths and 2 Roses -> Dice
+3 Wine Bottles and 4 Leafs -> Torch
