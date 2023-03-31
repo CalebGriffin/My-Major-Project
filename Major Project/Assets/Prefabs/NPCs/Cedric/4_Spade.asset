@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6558dc6e423f046dcb6337723fb77096, type: 3}
-  m_Name: 4_Toy Digger
+  m_Name: 4_Spade
   m_EditorClassIdentifier: 
   requiredItems:
-  - item: {fileID: 11400000, guid: dfc91fab572c642fa98142a8ca3b6c26, type: 2}
+  - item: {fileID: 11400000, guid: c47515c7451bb4936b71ea644c47dd55, type: 2}
     amount: 2
-  - item: {fileID: 11400000, guid: c7ae4f575d6964badb2f8769e2e9636c, type: 2}
-    amount: 1
+  - item: {fileID: 11400000, guid: a37723bac28b04c4789bf2d5a29c360d, type: 2}
+    amount: 3
   rewardItem:
-    item: {fileID: 11400000, guid: dc87bfa9df1784d7fbbd33daa14068ab, type: 2}
+    item: {fileID: 11400000, guid: f8a968e50ee2443fa8948fbc7c45efc0, type: 2}
     amount: 1
