@@ -20,6 +20,7 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private int responseCount = 0;
     [SerializeField] private int hintCount = 0;
     [SerializeField] private int chatCount = 0;
+    private int untradableIndex = 0;
 
     [SerializeField] private Transaction[] transactions;
 
@@ -65,7 +66,7 @@ public class DialogueController : MonoBehaviour
         spokenToPlayer = true;
     }
 
-    private void ParameterSetup()
+    public void ParameterSetup()
     {
         if (!spokenToPlayer) return;
 
@@ -73,6 +74,8 @@ public class DialogueController : MonoBehaviour
         ConversationManager.Instance.SetInt("ResponseChoice", Random.Range(0, responseCount));
         ConversationManager.Instance.SetInt("HintChoice", Random.Range(0, hintCount));
         ConversationManager.Instance.SetInt("ChatChoice", Random.Range(0, chatCount));
+
+        untradableIndex = 0;
 
         // Setup the parameters for the transactions
         for (int i = 0; i < transactions.Length; i++)
@@ -93,10 +96,12 @@ public class DialogueController : MonoBehaviour
             switch (transactions[i].RewardItem.Item.Type)
             {
                 case ItemData.ItemType.Collectible:
-                    ConversationManager.Instance.SetBool($"HasUntradable{i}", CollectibleStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+                    ConversationManager.Instance.SetBool($"HasUntradable{untradableIndex}", CollectibleStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+                    untradableIndex++;
                     break;
                 case ItemData.ItemType.Tool:
-                    ConversationManager.Instance.SetBool($"HasUntradable{i}", ToolStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+                    ConversationManager.Instance.SetBool($"HasUntradable{untradableIndex}", ToolStorage.Instance.HasItem(transactions[i].RewardItem.Item));
+                    untradableIndex++;
                     break;
             }
         }
