@@ -13,7 +13,6 @@ public class DialogueController : MonoBehaviour
     private InputAction selectOptionAction;
     private InputAction endConversationAction;
 
-    [SerializeField] private NPCConversation introConversation;
     [SerializeField] private NPCConversation mainConversation;
     [SerializeField] private ConversationManager.eNPC npcName;
     private bool spokenToPlayer = false;
@@ -60,16 +59,18 @@ public class DialogueController : MonoBehaviour
     public void StartConversation()
     {
         playerInput.SwitchCurrentActionMap(GRefs.Instance.DialogueActionMap);
-        ConversationManager.Instance.StartConversation(spokenToPlayer ? mainConversation : introConversation);
-        ConversationManager.Instance.CurrentNPC = npcName;
-        ParameterSetup();
+
+        ConversationManager.Instance.StartConversation(mainConversation);
+        ConversationManager.Instance.SetBool("SpokenToPlayer", spokenToPlayer);
+
         spokenToPlayer = true;
+        ParameterSetup();
+        ConversationManager.Instance.CurrentNPC = npcName;
     }
+
 
     public void ParameterSetup()
     {
-        if (!spokenToPlayer) return;
-
         // Pick a random response, hint and chat option
         ConversationManager.Instance.SetInt("ResponseChoice", Random.Range(0, responseCount));
         ConversationManager.Instance.SetInt("HintChoice", Random.Range(0, hintCount));
