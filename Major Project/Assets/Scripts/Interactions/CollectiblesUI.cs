@@ -35,7 +35,7 @@ public class CollectiblesUI : MonoBehaviour
             }
 
             // Update the progress bar
-            progressBar.fillAmount = (float)CollectibleStorage.Instance.Items.Count / 18;
+            progressBar.fillAmount = CollectibleStorage.Instance.Items.Count / 18.0f;
             collectiblesFoundText.text = CollectibleStorage.Instance.Items.Count + "/18";
         }
     }
