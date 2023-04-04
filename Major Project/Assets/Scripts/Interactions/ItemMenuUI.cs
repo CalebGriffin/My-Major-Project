@@ -134,31 +134,11 @@ public class ItemMenuUI : MonoBehaviour
 
         if (Mathf.Abs(directionVector.x) > Mathf.Abs(directionVector.y))
         {
-            switch (directionVector.x)
-            {
-                case float x when x > 0:
-                    currentItemSlot = currentItemSlot.Right;
-                    break;
-                case float x when x < 0:
-                    currentItemSlot = currentItemSlot.Left;
-                    break;
-                default:
-                    break;
-            }
+            currentItemSlot = directionVector.x > 0 ? currentItemSlot.Right : currentItemSlot.Left;
         }
         else
         {
-            switch (directionVector.y)
-            {
-                case float y when y > 0:
-                    currentItemSlot = currentItemSlot.Up;
-                    break;
-                case float y when y < 0:
-                    currentItemSlot = currentItemSlot.Down;
-                    break;
-                default:
-                    break;
-            }
+            currentItemSlot = directionVector.y > 0 ? currentItemSlot.Up : currentItemSlot.Down;
         }
 
         currentItemSlot.Highlight();
