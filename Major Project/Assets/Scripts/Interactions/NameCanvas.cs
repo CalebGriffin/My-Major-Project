@@ -5,11 +5,15 @@ using UnityEngine;
 public class NameCanvas : MonoBehaviour
 {
     private Transform mainCameraTransform;
+    private new Transform transform;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        mainCameraTransform = GRefs.Instance.PlayerCameraTransform;
+        if (mainCameraTransform == null)
+            mainCameraTransform = GRefs.Instance.PlayerCameraTransform;
+        
+        if (transform == null)
+            transform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
