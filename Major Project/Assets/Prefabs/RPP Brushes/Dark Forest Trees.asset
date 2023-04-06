@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab40fa445ff22fc479be407303fecb08, type: 3}
+  m_Name: Dark Forest Trees
+  m_EditorClassIdentifier: 
+  Notes: "This script needs Random Prefab Placer Asset to work \n https://assetstore.unity.com/packages/tools/terrain/random-prefab-placer-104765 "
+  prefabs:
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 9024100538320465775, guid: fc11247f317154182a0c1dc05cf3b936, type: 3}
+    possibility: 0.8
+    scaleMin: 0.5
+    scaleMax: 1.1
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 0, z: 1}
+    useNormalsForRotation: 0
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 8271508672982263469, guid: 76dabd2454ce443b78ae6c1a33a83848, type: 3}
+    possibility: 0.8
+    scaleMin: 0.5
+    scaleMax: 1.1
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 0, z: 1}
+    useNormalsForRotation: 0
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 198856012176743992, guid: 841e013683ed140f7833685b296efdc7, type: 3}
+    possibility: 0.8
+    scaleMin: 0.8
+    scaleMax: 1.7
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 0, z: 1}
+    useNormalsForRotation: 0
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 3452868937967455684, guid: a209ce53dd20b4b47bbfe5089769455b, type: 3}
+    possibility: 0.8
+    scaleMin: 0.65
+    scaleMax: 1.375
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 0, z: 1}
+    useNormalsForRotation: 0
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 7788135227084507095, guid: 38d878f2f7ead42a9bea8e29c7d2e208, type: 3}
+    possibility: 0.8
+    scaleMin: 0.75
+    scaleMax: 1.6
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 0, z: 1}
+    useNormalsForRotation: 0
+    maxSlopeAngle: 45
+  objectsToPlace: 10

@@ -610,7 +610,7 @@ namespace kawetofe.randomPrefabPlacer
 	public class PlacementPrefab:System.Object{
         [SerializeField]
         [Tooltip("Placement of this object will only be allowed on objects with these set layers")]
-        public LayerMask allowedLayers = ~0;
+        public LayerMask allowedLayers = ~1;
 		[SerializeField]
 		[Tooltip("Drag your game prefabs here")]
         public GameObject prefab;        

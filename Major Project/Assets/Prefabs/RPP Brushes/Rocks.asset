@@ -18,22 +18,99 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 1
     prefab: {fileID: 6628875585371920717, guid: b224cb760f9cc42ada8002f444bdbe9c, type: 3}
-    possibility: 0.8
+    possibility: 0.02
     scaleMin: 2
     scaleMax: 3
     placementOffset: {x: 0, y: 0, z: 0}
     lockedRotations: {x: 1, y: 0, z: 1}
     useNormalsForRotation: 0
-    maxSlopeAngle: 100
+    maxSlopeAngle: 5
   - allowedLayers:
       serializedVersion: 2
       m_Bits: 1
     prefab: {fileID: 1764030391812932088, guid: a60956b04bd79458189a576d04460e04, type: 3}
-    possibility: 0.8
+    possibility: 0.5
     scaleMin: 0.1
     scaleMax: 0.7
     placementOffset: {x: 0, y: 0, z: 0}
     lockedRotations: {x: 1, y: 1, z: 1}
     useNormalsForRotation: 1
-    maxSlopeAngle: 100
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 4575547309376899430, guid: 9d26b9926525c4fd499da3c737348e39, type: 3}
+    possibility: 0.4
+    scaleMin: 0.1
+    scaleMax: 0.8
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 1, z: 1}
+    useNormalsForRotation: 1
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 3309548125909421652, guid: 42039704444c6418c93147cfb051f399, type: 3}
+    possibility: 0.5
+    scaleMin: 0.1
+    scaleMax: 0.55
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 1, z: 1}
+    useNormalsForRotation: 1
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 17640866588532298, guid: c5f7093dbfe244ec197a1350f9d9e223, type: 3}
+    possibility: 0.5
+    scaleMin: 0.2
+    scaleMax: 0.9
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 1, z: 1}
+    useNormalsForRotation: 1
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 6789429566832935752, guid: ec6332964e146461f96ede5d1aa68ea6, type: 3}
+    possibility: 0.5
+    scaleMin: 0.2
+    scaleMax: 1
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 1, z: 1}
+    useNormalsForRotation: 1
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 8185511476421754616, guid: 4fbd688cc1fcb49d5a2d710369021574, type: 3}
+    possibility: 0.5
+    scaleMin: 0.4
+    scaleMax: 1.3
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 1, z: 1}
+    useNormalsForRotation: 1
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 8185511476421754616, guid: 4fbd688cc1fcb49d5a2d710369021574, type: 3}
+    possibility: 0.5
+    scaleMin: 0.4
+    scaleMax: 1.3
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 1, z: 1}
+    useNormalsForRotation: 1
+    maxSlopeAngle: 45
+  - allowedLayers:
+      serializedVersion: 2
+      m_Bits: 1
+    prefab: {fileID: 6936327135722467719, guid: 6c74301ed5e0940b29266fec62a08e9e, type: 3}
+    possibility: 0.5
+    scaleMin: 0.5
+    scaleMax: 1
+    placementOffset: {x: 0, y: 0, z: 0}
+    lockedRotations: {x: 1, y: 1, z: 1}
+    useNormalsForRotation: 1
+    maxSlopeAngle: 45
   objectsToPlace: 10
