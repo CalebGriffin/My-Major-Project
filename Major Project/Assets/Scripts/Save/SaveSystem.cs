@@ -27,6 +27,11 @@ public class SaveSystem : MonoBehaviour
     [SerializeField] private DialogueController marcus;
     [SerializeField] private DialogueController tobias;
 
+    void Start()
+    {
+        Load();
+    }
+
 
     public void UpdateAll()
     {
@@ -108,4 +113,18 @@ public class SaveSystem : MonoBehaviour
         File.Delete(Application.persistentDataPath + "/savefile.json");
     }
 
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        Save();
+    }
+
+    private void OnApplicationFocus(bool focusStatus)
+    {
+        Save();
+    }
+
+    private void OnApplicationQuit()
+    {
+        Save();
+    }
 }

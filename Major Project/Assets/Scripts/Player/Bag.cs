@@ -7,7 +7,7 @@ using NaughtyAttributes;
 public class Bag : MonoBehaviour
 {
     protected Dictionary<ItemData, int> items = new Dictionary<ItemData, int>();
-    public Dictionary<ItemData, int> Items { get { return items; } protected set { items = value; } }
+    public Dictionary<ItemData, int> Items { get { return items; } protected set { items = value; SaveSystem.Instance.Save(); } }
 
     //! Only used for debugging, remove later
     [Button]
