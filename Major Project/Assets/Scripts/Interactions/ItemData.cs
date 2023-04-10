@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item"), System.Serializable]
 public class ItemData : ScriptableObject
 {
     [SerializeField] string itemName;
@@ -17,6 +17,7 @@ public class ItemData : ScriptableObject
     [SerializeField] bool isTradeable;
     public bool IsTradeable { get { return isTradeable; } }
 
+    [System.Serializable]
     public enum ItemType
     {
         Item,

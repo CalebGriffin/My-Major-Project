@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Collectible Item")]
+[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Collectible Item"), System.Serializable]
 public class CollectibleItemData : ItemData
 {
     [SerializeField] string actualName;

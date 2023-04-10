@@ -15,7 +15,7 @@ public class DialogueController : MonoBehaviour
 
     [SerializeField] private NPCConversation mainConversation;
     [SerializeField] private ConversationManager.eNPC npcName;
-    private bool spokenToPlayer = false;
+    public bool SpokenToPlayer = false;
     [SerializeField] private int responseCount = 0;
     [SerializeField] private int hintCount = 0;
     [SerializeField] private int chatCount = 0;
@@ -61,9 +61,9 @@ public class DialogueController : MonoBehaviour
         playerInput.SwitchCurrentActionMap(GRefs.Instance.DialogueActionMap);
 
         ConversationManager.Instance.StartConversation(mainConversation);
-        ConversationManager.Instance.SetBool("SpokenToPlayer", spokenToPlayer);
+        ConversationManager.Instance.SetBool("SpokenToPlayer", SpokenToPlayer);
 
-        spokenToPlayer = true;
+        SpokenToPlayer = true;
         ParameterSetup();
         ConversationManager.Instance.CurrentNPC = npcName;
     }
