@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 
 namespace Caleb
@@ -28,13 +29,11 @@ namespace Caleb
 
         private void OnApplicationQuit()
         {
-            #if UNITY_EDITOR
             foreach (ItemData item in collectibleItems)
             {
                 item.Reset();
             }
-            #endif
         }
     }
 }
-
+#endif
