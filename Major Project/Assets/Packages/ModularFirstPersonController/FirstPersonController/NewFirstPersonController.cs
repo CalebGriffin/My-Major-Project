@@ -51,7 +51,7 @@ public class NewFirstPersonController : MonoBehaviour
 
     public bool enableZoom = false;
     public bool holdToZoom = false;
-    public KeyCode zoomKey = KeyCode.Mouse1;
+    public KeyCode zoomKey;
     public float zoomFOV = 30f;
     public float zoomStepTime = 5f;
 
@@ -113,9 +113,9 @@ public class NewFirstPersonController : MonoBehaviour
 
     #region Crouch
 
-    public bool enableCrouch = true;
+    public bool enableCrouch = false;
     public bool holdToCrouch = true;
-    public KeyCode crouchKey = KeyCode.LeftControl;
+    public KeyCode crouchKey;
     public float crouchHeight = .75f;
     public float speedReduction = .5f;
 
@@ -244,6 +244,7 @@ public class NewFirstPersonController : MonoBehaviour
 
         #region Camera Zoom
 
+        /*
         if (enableZoom)
         {
             // Changes isZoomed when key is pressed
@@ -284,6 +285,7 @@ public class NewFirstPersonController : MonoBehaviour
                 playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, fov, zoomStepTime * Time.deltaTime);
             }
         }
+        */
 
         #endregion
         #endregion
@@ -351,6 +353,7 @@ public class NewFirstPersonController : MonoBehaviour
 
         #region Crouch
 
+        /*
         if (enableCrouch)
         {
             if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
@@ -369,6 +372,7 @@ public class NewFirstPersonController : MonoBehaviour
                 Crouch();
             }
         }
+        */
 
         #endregion
 
