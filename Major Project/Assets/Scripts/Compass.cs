@@ -51,11 +51,11 @@ public class Compass : MonoBehaviour
 
     void HideCompass()
     {
-        LeanTween.moveX(compassTransform.gameObject, compassHideX, compassHideTime).setOnComplete(() => isVisible = false);
+        LeanTween.move(compassTransform, new Vector3(compassHideX, 100, 0), compassHideTime).setOnComplete(() => isVisible = false);
     }
 
     void ShowCompass()
     {
-        LeanTween.moveX(compassTransform.gameObject, compassShowX, compassHideTime).setOnComplete(() => isVisible = true);
+        LeanTween.move(compassTransform, new Vector3(compassShowX, 100, 0), compassHideTime).setOnComplete(() => isVisible = true);
     }
 }
