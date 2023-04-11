@@ -108,9 +108,16 @@ public class SaveSystem : MonoBehaviour
         tobias.SpokenToPlayer = saveData.SpokenToTobias;
     }
 
+    [Button]
     public void DeleteSave()
     {
         File.Delete(Application.persistentDataPath + "/savefile.json");
+    }
+
+    [Button]
+    public void PrintDataPath()
+    {
+        Debug.Log(Application.persistentDataPath);
     }
 
     private void OnApplicationPause(bool pauseStatus)
