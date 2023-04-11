@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     // Look references
     private Transform cameraTransform;
-    private float sphereCastRadius = 0.005f;
+    private float sphereCastRadius = 0.2f;
     private float sphereCastDistance = 4f;
     [SerializeField] private LayerMask interactablesLayerMask;
     private int currentLookedObjectID = -1;
