@@ -2260,7 +2260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Today: 10h 10m'
+  m_text: <color=#ff0000>Today:</color> 10h 10m
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
   m_sharedMaterial: {fileID: 7547359026690286499, guid: 658a11624d62f45c2962b0af5e251eb8, type: 2}
@@ -3266,7 +3266,7 @@ RectTransform:
   m_GameObject: {fileID: 369876817961290575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1799797245263419486}
@@ -3279,7 +3279,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1000}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &444850905347503456
