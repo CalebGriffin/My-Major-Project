@@ -85,6 +85,9 @@ public class SaveSystem : MonoBehaviour
     [Button]
     public void Load()
     {
+        if (!File.Exists(Application.persistentDataPath + "/savefile.json"))
+            return;
+        
         string json = File.ReadAllText(Application.persistentDataPath + "/savefile.json");
         saveData = JsonUtility.FromJson<SaveData>(json);
 

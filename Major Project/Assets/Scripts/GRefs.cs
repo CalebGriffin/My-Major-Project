@@ -39,6 +39,8 @@ public class GRefs : MonoBehaviour
     public string UIActionMap { get { return playerControls.UI.ToString().ActionMapStringReplace(); } }
 
     public string DialogueActionMap { get { return playerControls.Dialogue.ToString().ActionMapStringReplace(); } }
+
+    public string TimeUIActionMap { get { return playerControls.TimeUI.ToString().ActionMapStringReplace(); } }
 }
 
 public static class GRefsExtensions

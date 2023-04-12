@@ -80,6 +80,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenTimeMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""fa55da5c-0cf1-4af9-8935-6e9ea46ed89f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -256,6 +265,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""OpenItemMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""35fdf62c-cf2f-48b7-a22f-f6f0e81fe47c"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""OpenTimeMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2eb5d1b1-363c-492b-b945-99ded25b4b72"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""OpenTimeMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -537,6 +568,120 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""TimeUI"",
+            ""id"": ""301ffced-2f10-4cf0-8a8c-8aacc713a2a8"",
+            ""actions"": [
+                {
+                    ""name"": ""MoveTimeSelection"",
+                    ""type"": ""Value"",
+                    ""id"": ""af11a1ef-22f9-492d-a77a-597a4b0243a7"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CloseTimeMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""bf9184c1-8c8e-45c0-9f7e-49313a0fa233"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""WASD 1D Vector"",
+                    ""id"": ""bfd9ebaa-36ed-436a-8a39-4cf71d713952"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveTimeSelection"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""677c5ea8-faa4-4e64-a21d-ad320ed3adbe"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveTimeSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Positive"",
+                    ""id"": ""fc0e2565-4b3d-4a29-9d12-4b4f82ed133f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveTimeSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""DPAD 1D Vector"",
+                    ""id"": ""33a11e8d-f2ed-41dd-9d6c-002786eea8a7"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""MoveTimeSelection"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""3f813fe4-245c-46b8-b4b8-7a6b1d9ece56"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""MoveTimeSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Positive"",
+                    ""id"": ""b33fedeb-ed3b-4ecc-9917-75501f54f752"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""MoveTimeSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72184fc3-2961-4a1a-8cff-f068685a6495"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""CloseTimeMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""98df9cc0-0cd7-4433-8946-7cb6f83acc78"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseTimeMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -577,6 +722,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_OpenItemMenu = m_Player.FindAction("OpenItemMenu", throwIfNotFound: true);
+        m_Player_OpenTimeMenu = m_Player.FindAction("OpenTimeMenu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_CloseItemMenu = m_UI.FindAction("CloseItemMenu", throwIfNotFound: true);
@@ -588,6 +734,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Dialogue_PrevOption = m_Dialogue.FindAction("PrevOption", throwIfNotFound: true);
         m_Dialogue_SelectOption = m_Dialogue.FindAction("SelectOption", throwIfNotFound: true);
         m_Dialogue_EndConversation = m_Dialogue.FindAction("EndConversation", throwIfNotFound: true);
+        // TimeUI
+        m_TimeUI = asset.FindActionMap("TimeUI", throwIfNotFound: true);
+        m_TimeUI_MoveTimeSelection = m_TimeUI.FindAction("MoveTimeSelection", throwIfNotFound: true);
+        m_TimeUI_CloseTimeMenu = m_TimeUI.FindAction("CloseTimeMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -653,6 +803,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_OpenItemMenu;
+    private readonly InputAction m_Player_OpenTimeMenu;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -663,6 +814,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @OpenItemMenu => m_Wrapper.m_Player_OpenItemMenu;
+        public InputAction @OpenTimeMenu => m_Wrapper.m_Player_OpenTimeMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -690,6 +842,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @OpenItemMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenItemMenu;
                 @OpenItemMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenItemMenu;
                 @OpenItemMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenItemMenu;
+                @OpenTimeMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenTimeMenu;
+                @OpenTimeMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenTimeMenu;
+                @OpenTimeMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenTimeMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -712,6 +867,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @OpenItemMenu.started += instance.OnOpenItemMenu;
                 @OpenItemMenu.performed += instance.OnOpenItemMenu;
                 @OpenItemMenu.canceled += instance.OnOpenItemMenu;
+                @OpenTimeMenu.started += instance.OnOpenTimeMenu;
+                @OpenTimeMenu.performed += instance.OnOpenTimeMenu;
+                @OpenTimeMenu.canceled += instance.OnOpenTimeMenu;
             }
         }
     }
@@ -822,6 +980,47 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public DialogueActions @Dialogue => new DialogueActions(this);
+
+    // TimeUI
+    private readonly InputActionMap m_TimeUI;
+    private ITimeUIActions m_TimeUIActionsCallbackInterface;
+    private readonly InputAction m_TimeUI_MoveTimeSelection;
+    private readonly InputAction m_TimeUI_CloseTimeMenu;
+    public struct TimeUIActions
+    {
+        private @PlayerControls m_Wrapper;
+        public TimeUIActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @MoveTimeSelection => m_Wrapper.m_TimeUI_MoveTimeSelection;
+        public InputAction @CloseTimeMenu => m_Wrapper.m_TimeUI_CloseTimeMenu;
+        public InputActionMap Get() { return m_Wrapper.m_TimeUI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TimeUIActions set) { return set.Get(); }
+        public void SetCallbacks(ITimeUIActions instance)
+        {
+            if (m_Wrapper.m_TimeUIActionsCallbackInterface != null)
+            {
+                @MoveTimeSelection.started -= m_Wrapper.m_TimeUIActionsCallbackInterface.OnMoveTimeSelection;
+                @MoveTimeSelection.performed -= m_Wrapper.m_TimeUIActionsCallbackInterface.OnMoveTimeSelection;
+                @MoveTimeSelection.canceled -= m_Wrapper.m_TimeUIActionsCallbackInterface.OnMoveTimeSelection;
+                @CloseTimeMenu.started -= m_Wrapper.m_TimeUIActionsCallbackInterface.OnCloseTimeMenu;
+                @CloseTimeMenu.performed -= m_Wrapper.m_TimeUIActionsCallbackInterface.OnCloseTimeMenu;
+                @CloseTimeMenu.canceled -= m_Wrapper.m_TimeUIActionsCallbackInterface.OnCloseTimeMenu;
+            }
+            m_Wrapper.m_TimeUIActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @MoveTimeSelection.started += instance.OnMoveTimeSelection;
+                @MoveTimeSelection.performed += instance.OnMoveTimeSelection;
+                @MoveTimeSelection.canceled += instance.OnMoveTimeSelection;
+                @CloseTimeMenu.started += instance.OnCloseTimeMenu;
+                @CloseTimeMenu.performed += instance.OnCloseTimeMenu;
+                @CloseTimeMenu.canceled += instance.OnCloseTimeMenu;
+            }
+        }
+    }
+    public TimeUIActions @TimeUI => new TimeUIActions(this);
     private int m_GamepadSchemeIndex = -1;
     public InputControlScheme GamepadScheme
     {
@@ -848,6 +1047,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnOpenItemMenu(InputAction.CallbackContext context);
+        void OnOpenTimeMenu(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -861,5 +1061,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnPrevOption(InputAction.CallbackContext context);
         void OnSelectOption(InputAction.CallbackContext context);
         void OnEndConversation(InputAction.CallbackContext context);
+    }
+    public interface ITimeUIActions
+    {
+        void OnMoveTimeSelection(InputAction.CallbackContext context);
+        void OnCloseTimeMenu(InputAction.CallbackContext context);
     }
 }

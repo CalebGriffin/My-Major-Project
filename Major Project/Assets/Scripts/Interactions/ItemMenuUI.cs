@@ -126,6 +126,8 @@ public class ItemMenuUI : MonoBehaviour
     }
     private void MoveItemSelection(Vector2 directionVector)
     {
+        if (directionVector == Vector2.zero) return;
+
         currentItemSlot.UnHighlight();
 
         inventoryCurrentItemText.text = "Current Item:";
