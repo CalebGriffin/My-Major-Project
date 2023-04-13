@@ -25,9 +25,13 @@ namespace DialogueEditor
 
         public delegate void ConversationStartEvent();
         public delegate void ConversationEndEvent();
+        public delegate void DialogueStartEvent();
+        public delegate void DialogueEndEvent();
 
         public static ConversationStartEvent OnConversationStarted;
         public static ConversationEndEvent OnConversationEnded;
+        public static DialogueStartEvent OnDialogueStarted;
+        public static DialogueEndEvent OnDialogueEnded;
 
         // User-Facing options
         // Drawn by custom inspector
@@ -367,6 +371,7 @@ namespace DialogueEditor
                 // Finished?
                 if (m_scrollIndex >= m_targetScrollTextCount)
                 {
+                    OnDialogueEnded?.Invoke();
                     SetState(eState.TransitioningOptionsOn);
                 }
             }
@@ -536,6 +541,8 @@ namespace DialogueEditor
                     DialogueText.maxVisibleCharacters = speech.Text.Length;
                 }
             }
+
+            OnDialogueStarted?.Invoke();
 
             // Call the event
             if (speech.Event != null)

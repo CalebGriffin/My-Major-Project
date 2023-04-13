@@ -7,6 +7,7 @@ public class NPC : Interactable
 {
     [SerializeField] private Outline outline;
     [SerializeField] private DialogueController dialogueController;
+    [SerializeField] private NPCAnim npcAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class NPC : Interactable
             return;
         
         outline.enabled = true;
+        npcAnim.LookAtPlayer();
     }
 
     protected override void OnLookAway(int id)
@@ -34,6 +36,7 @@ public class NPC : Interactable
             return;
 
         outline.enabled = false;
+        npcAnim.StopLookingAtPlayer();
     }
 
     protected override void OnInteract(int id)
