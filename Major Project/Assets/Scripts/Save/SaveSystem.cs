@@ -76,6 +76,7 @@ public class SaveSystem : MonoBehaviour
     [Button]
     public void Save()
     {
+        print("Saving...");
         UpdateAll();
 
         string json = JsonUtility.ToJson(saveData);
@@ -86,7 +87,10 @@ public class SaveSystem : MonoBehaviour
     public void Load()
     {
         if (!File.Exists(Application.persistentDataPath + "/savefile.json"))
+        {
+            ClearAll();
             return;
+        }
         
         string json = File.ReadAllText(Application.persistentDataPath + "/savefile.json");
         saveData = JsonUtility.FromJson<SaveData>(json);
@@ -114,23 +118,32 @@ public class SaveSystem : MonoBehaviour
     [Button]
     public void DeleteSave()
     {
-        File.Delete(Application.persistentDataPath + "/savefile.json");
+        if (File.Exists(Application.persistentDataPath + "/savefile.json"))
+        {
+            File.Delete(Application.persistentDataPath + "/savefile.json");
+            Load();
+        }
+    }
+
+    private void ClearAll()
+    {
+        Inventory.Instance.Items.Clear();
+        CollectibleStorage.Instance.Items.Clear();
+        ToolStorage.Instance.Items.Clear();
+        playerTransform.position = Vector3.zero;
+        playerTransform.rotation = Quaternion.identity;
+        cedric.SpokenToPlayer = false;
+        isabella.SpokenToPlayer = false;
+        simon.SpokenToPlayer = false;
+        edith.SpokenToPlayer = false;
+        marcus.SpokenToPlayer = false;
+        tobias.SpokenToPlayer = false;
     }
 
     [Button]
     public void PrintDataPath()
     {
         Debug.Log(Application.persistentDataPath);
-    }
-
-    private void OnApplicationPause(bool pauseStatus)
-    {
-        Save();
-    }
-
-    private void OnApplicationFocus(bool focusStatus)
-    {
-        Save();
     }
 
     private void OnApplicationQuit()

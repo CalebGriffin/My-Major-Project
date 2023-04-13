@@ -202,6 +202,7 @@ public class TimeSystem : MonoBehaviour
         {
             counter = 0;
             Save();
+            SaveSystem.Instance.Save();
         }
 
         // Start the loop again
@@ -217,7 +218,10 @@ public class TimeSystem : MonoBehaviour
     private void Load()
     {
         if(!File.Exists(Application.persistentDataPath + "/time.json"))
+        {
+            ClearAll();
             return;
+        }
 
         string json = File.ReadAllText(Application.persistentDataPath + "/time.json");
         timeData = JsonUtility.FromJson<TimeData>(json);
@@ -261,7 +265,17 @@ public class TimeSystem : MonoBehaviour
         var file = Application.persistentDataPath + "/time.json";
 
         if (File.Exists(file))
+        {
             File.Delete(file);
+            Load();
+        }
+    }
+
+    private void ClearAll()
+    {
+        GameTimeDict.Clear();
+        timeData.Days.Clear();
+        timeData.Hours.Clear();
     }
 
     [Button]
