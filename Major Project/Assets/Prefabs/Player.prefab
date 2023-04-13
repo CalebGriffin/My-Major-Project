@@ -8825,8 +8825,8 @@ Rigidbody:
   m_GameObject: {fileID: 8393882896817357406}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0.05
-  m_AngularDrag: 0.05
+  m_Drag: 0.5
+  m_AngularDrag: 0.2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -8916,10 +8916,10 @@ MonoBehaviour:
   enableSprint: 1
   unlimitedSprint: 1
   sprintKey: 304
-  sprintSpeed: 20
+  sprintSpeed: 9
   sprintDuration: 5
   sprintCooldown: 0.5
-  sprintFOV: 80
+  sprintFOV: 70
   sprintFOVStepTime: 10
   useSprintBar: 0
   hideBarWhenFull: 1
@@ -9258,6 +9258,7 @@ GameObject:
   - component: {fileID: 8393882897575553226}
   - component: {fileID: 8393882897575553227}
   - component: {fileID: 6103117322159356576}
+  - component: {fileID: 1471484939}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: MainCamera
@@ -9401,6 +9402,15 @@ MonoBehaviour:
   - assemblyQualifiedName: Pinwheel.Poseidon.FX.PostProcessing.PWetLens, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   m_AfterStackBundles: []
+--- !u!45 &1471484939
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8393882897575553224}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 56113b3b655ab7349bab4d7d405c258a, type: 2}
 --- !u!1 &8393882898053348552
 GameObject:
   m_ObjectHideFlags: 0
