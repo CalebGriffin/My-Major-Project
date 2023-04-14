@@ -45,6 +45,8 @@ public class GRefs : MonoBehaviour
     public string MainMenuActionMap { get { return playerControls.MainMenu.ToString().ActionMapStringReplace(); } }
 
     public string ControlsMenuActionMap { get { return playerControls.ControlsMenu.ToString().ActionMapStringReplace(); } }
+
+    public string TradesMenuActionMap { get { return playerControls.TradesMenu.ToString().ActionMapStringReplace(); } }
 }
 
 public static class GRefsExtensions

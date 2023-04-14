@@ -16,9 +16,7 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 326f52b4f106a4254b485447255d67af, type: 2}
     amount: 1
   - item: {fileID: 11400000, guid: 407a3537a51f6490a8e74802e53ccedf, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 602809299d21942678233db96e069fb3, type: 2}
-    amount: 1
+    amount: 2
   rewardItem:
     item: {fileID: 11400000, guid: 55c6b066e04964be6bdef7f863eb929f, type: 2}
     amount: 2

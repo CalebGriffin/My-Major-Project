@@ -98,6 +98,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenTradesMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""d0007a7e-b337-45fe-b69d-b42a7786a4b7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -318,6 +327,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""OpenMainMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""307fde0f-e7d4-4469-a9ba-d7595bbafc65"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""OpenTradesMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7361ac23-dc56-4be5-ab9d-283ad85d6705"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""OpenTradesMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -941,6 +972,120 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""TradesMenu"",
+            ""id"": ""31955725-a074-45e1-9757-80d40be8ab30"",
+            ""actions"": [
+                {
+                    ""name"": ""Scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""6457069f-d610-4dbf-9235-4effe4975972"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Close"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb2804d6-2288-43eb-a607-d616499fbcf1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""66c9c8b7-1cce-48e8-a2c5-a46d53a42cb9"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c67485b-f65f-42eb-8223-9881b12b9548"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD 1D Axis"",
+                    ""id"": ""edbd2418-eca1-4ded-900e-6f2131972c6b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""ca35bcd9-8311-4f8d-8a85-da0e595116fb"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""13c82283-7ef4-41d8-b2f3-fc0dea30c231"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""DPAD 1D Axis"",
+                    ""id"": ""ff833f3e-3b02-4cf4-88b1-9e2d1dd5a3d2"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""a709a3e8-3d40-4382-acc7-816be811eed2"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""ffcc5c6d-5bfb-43f1-9600-e94d6b430684"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -983,6 +1128,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Player_OpenItemMenu = m_Player.FindAction("OpenItemMenu", throwIfNotFound: true);
         m_Player_OpenTimeMenu = m_Player.FindAction("OpenTimeMenu", throwIfNotFound: true);
         m_Player_OpenMainMenu = m_Player.FindAction("OpenMainMenu", throwIfNotFound: true);
+        m_Player_OpenTradesMenu = m_Player.FindAction("OpenTradesMenu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_CloseItemMenu = m_UI.FindAction("CloseItemMenu", throwIfNotFound: true);
@@ -1006,6 +1152,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_ControlsMenu = asset.FindActionMap("ControlsMenu", throwIfNotFound: true);
         m_ControlsMenu_Slider = m_ControlsMenu.FindAction("Slider", throwIfNotFound: true);
         m_ControlsMenu_Back = m_ControlsMenu.FindAction("Back", throwIfNotFound: true);
+        // TradesMenu
+        m_TradesMenu = asset.FindActionMap("TradesMenu", throwIfNotFound: true);
+        m_TradesMenu_Scroll = m_TradesMenu.FindAction("Scroll", throwIfNotFound: true);
+        m_TradesMenu_Close = m_TradesMenu.FindAction("Close", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1073,6 +1223,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_OpenItemMenu;
     private readonly InputAction m_Player_OpenTimeMenu;
     private readonly InputAction m_Player_OpenMainMenu;
+    private readonly InputAction m_Player_OpenTradesMenu;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -1085,6 +1236,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @OpenItemMenu => m_Wrapper.m_Player_OpenItemMenu;
         public InputAction @OpenTimeMenu => m_Wrapper.m_Player_OpenTimeMenu;
         public InputAction @OpenMainMenu => m_Wrapper.m_Player_OpenMainMenu;
+        public InputAction @OpenTradesMenu => m_Wrapper.m_Player_OpenTradesMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1118,6 +1270,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @OpenMainMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenMainMenu;
                 @OpenMainMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenMainMenu;
                 @OpenMainMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenMainMenu;
+                @OpenTradesMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenTradesMenu;
+                @OpenTradesMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenTradesMenu;
+                @OpenTradesMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenTradesMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1146,6 +1301,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @OpenMainMenu.started += instance.OnOpenMainMenu;
                 @OpenMainMenu.performed += instance.OnOpenMainMenu;
                 @OpenMainMenu.canceled += instance.OnOpenMainMenu;
+                @OpenTradesMenu.started += instance.OnOpenTradesMenu;
+                @OpenTradesMenu.performed += instance.OnOpenTradesMenu;
+                @OpenTradesMenu.canceled += instance.OnOpenTradesMenu;
             }
         }
     }
@@ -1379,6 +1537,47 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public ControlsMenuActions @ControlsMenu => new ControlsMenuActions(this);
+
+    // TradesMenu
+    private readonly InputActionMap m_TradesMenu;
+    private ITradesMenuActions m_TradesMenuActionsCallbackInterface;
+    private readonly InputAction m_TradesMenu_Scroll;
+    private readonly InputAction m_TradesMenu_Close;
+    public struct TradesMenuActions
+    {
+        private @PlayerControls m_Wrapper;
+        public TradesMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Scroll => m_Wrapper.m_TradesMenu_Scroll;
+        public InputAction @Close => m_Wrapper.m_TradesMenu_Close;
+        public InputActionMap Get() { return m_Wrapper.m_TradesMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TradesMenuActions set) { return set.Get(); }
+        public void SetCallbacks(ITradesMenuActions instance)
+        {
+            if (m_Wrapper.m_TradesMenuActionsCallbackInterface != null)
+            {
+                @Scroll.started -= m_Wrapper.m_TradesMenuActionsCallbackInterface.OnScroll;
+                @Scroll.performed -= m_Wrapper.m_TradesMenuActionsCallbackInterface.OnScroll;
+                @Scroll.canceled -= m_Wrapper.m_TradesMenuActionsCallbackInterface.OnScroll;
+                @Close.started -= m_Wrapper.m_TradesMenuActionsCallbackInterface.OnClose;
+                @Close.performed -= m_Wrapper.m_TradesMenuActionsCallbackInterface.OnClose;
+                @Close.canceled -= m_Wrapper.m_TradesMenuActionsCallbackInterface.OnClose;
+            }
+            m_Wrapper.m_TradesMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Scroll.started += instance.OnScroll;
+                @Scroll.performed += instance.OnScroll;
+                @Scroll.canceled += instance.OnScroll;
+                @Close.started += instance.OnClose;
+                @Close.performed += instance.OnClose;
+                @Close.canceled += instance.OnClose;
+            }
+        }
+    }
+    public TradesMenuActions @TradesMenu => new TradesMenuActions(this);
     private int m_GamepadSchemeIndex = -1;
     public InputControlScheme GamepadScheme
     {
@@ -1407,6 +1606,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnOpenItemMenu(InputAction.CallbackContext context);
         void OnOpenTimeMenu(InputAction.CallbackContext context);
         void OnOpenMainMenu(InputAction.CallbackContext context);
+        void OnOpenTradesMenu(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1435,5 +1635,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnSlider(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
+    }
+    public interface ITradesMenuActions
+    {
+        void OnScroll(InputAction.CallbackContext context);
+        void OnClose(InputAction.CallbackContext context);
     }
 }
