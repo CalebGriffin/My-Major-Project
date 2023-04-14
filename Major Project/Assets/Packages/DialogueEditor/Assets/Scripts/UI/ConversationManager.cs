@@ -173,8 +173,8 @@ namespace DialogueEditor
 
             CurrentNPC = eNPC.NONE;
 
-            if (OnConversationEnded != null)
-                OnConversationEnded.Invoke();
+            OnDialogueEnded?.Invoke();
+            OnConversationEnded?.Invoke();
         }
 
         public void SelectNextOption()
