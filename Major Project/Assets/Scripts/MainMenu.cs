@@ -119,7 +119,7 @@ public class MainMenu : MonoBehaviour
 
         // Update the UI elements
         LeanTween.move(titleText, new Vector3(0, 100, 0), animationTime).setEaseInBack();
-        LeanTween.moveLocalY(buttonParent, -500, animationTime).setEaseInQuad();
+        LeanTween.moveLocalY(buttonParent, -600, animationTime).setEaseInQuad();
     }
 
     private void ArrowAnimation(InputAction.CallbackContext context)
