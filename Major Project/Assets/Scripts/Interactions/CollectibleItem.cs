@@ -8,7 +8,7 @@ public class CollectibleItem : Item
     private void Start()
     {
         if (CollectibleStorage.Instance.HasItem(itemData))
-            Destroy(gameObject);
+            gameObject.SetActive(false);
     }
 
     protected override void OnInteract(int id)

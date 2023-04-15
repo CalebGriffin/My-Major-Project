@@ -159,9 +159,6 @@ public class ItemMenuUI : MonoBehaviour
 
     private void UpdateToolTipScheme()
     {
-        print(playerInput.currentControlScheme);
-        print(playerControls.KeyboardScheme.name);
-        print(playerControls.GamepadScheme.name);
         if (playerInput.currentControlScheme == playerControls.KeyboardScheme.name)
         {
             keyboardToolTipsObject.SetActive(true);

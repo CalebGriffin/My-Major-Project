@@ -8,11 +8,13 @@ public class Item : Interactable
 {
     // Inventory Stuff
     [SerializeField] protected ItemData itemData;
+    public ItemData ItemData => itemData;
     
     // GameObject Stuff
     [SerializeField] protected Outline outline;
     [SerializeField] protected GameObject nameCanvas;
     [SerializeField] protected TextMeshProUGUI nameText;
+    protected Vector3 originalLocalScale;
     protected Vector3 nameCanvasScale = new Vector3(0.0005f, 0.0005f, 1f);
     protected float nameCanvasScaleTime = 0.2f;
     protected float waitTime = 0.5f;
@@ -29,6 +31,8 @@ public class Item : Interactable
         nameText.text = itemData.ItemName;
         nameCanvas.transform.localScale = Vector3.zero;
         nameCanvas.SetActive(false);
+
+        originalLocalScale = transform.localScale;
     }
 
     override protected void OnLook(int id)
@@ -83,7 +87,15 @@ public class Item : Interactable
             LeanTween.moveLocalY(gameObject, transform.localPosition.y + collectHeight, collectAnimationTime);
             easeType = LeanTweenType.notUsed;
         }
-        LeanTween.scale(gameObject, Vector3.zero, collectAnimationTime).setEase(easeType).setOnComplete(() => Destroy(gameObject));
+        LeanTween.scale(gameObject, Vector3.zero, collectAnimationTime).setEase(easeType).setOnComplete(() => gameObject.SetActive(false));
+    }
+
+    public void Reset()
+    {
+        collected = false;
+        outline.enabled = false;
+        transform.localScale = originalLocalScale;
+        gameObject.SetActive(true);
     }
 
     protected IEnumerator ShowCanvas()

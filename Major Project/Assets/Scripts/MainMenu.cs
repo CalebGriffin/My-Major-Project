@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 using NaughtyAttributes;
 using TMPro;
 
@@ -203,7 +204,20 @@ public class MainMenu : MonoBehaviour
         GRefs.Instance.PlayerTransform.rotation = Quaternion.identity;
         GRefs.Instance.PlayerCameraTransform.rotation = Quaternion.identity;
 
-        // Load the game
+        // Find all the collectibles and reset them
+        CollectibleItem[] collectibles = FindObjectsOfType<CollectibleItem>(true);
+        foreach (CollectibleItem collectible in collectibles)
+        {
+            collectible.ItemData.Reset();
+        }
+
+        Item[] items = FindObjectsOfType<Item>(true);
+        foreach (Item item in items)
+        {
+            print(item.gameObject.name);
+            item.Reset();
+        }
+
         Continue();
     }
 

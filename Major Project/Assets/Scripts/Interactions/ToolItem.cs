@@ -7,7 +7,7 @@ public class ToolItem : Item
     private void Start()
     {
         if (ToolStorage.Instance.HasItem(itemData))
-            Destroy(gameObject);
+            gameObject.SetActive(false);
     }
 
     protected override void OnInteract(int id)
@@ -31,7 +31,7 @@ public class ToolItem : Item
         LeanTween.scale(gameObject, Vector3.zero, collectAnimationTime).setEaseInBack().setOnComplete(() =>
         {
             itemData.Collect();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         });
     }
 }

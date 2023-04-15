@@ -95,7 +95,6 @@ public class GameTimeUI : MonoBehaviour
     private void MoveTimeSelection(InputAction.CallbackContext context)
     {
         float input = context.ReadValue<float>();
-        print(input);
 
         // If the input is negative and the index is not at the start of the list
         if (input < 0 && dayIndex > 0)
@@ -110,8 +109,6 @@ public class GameTimeUI : MonoBehaviour
         }
         else if (input != 0 && (dayIndex == 0 || dayIndex == currentlyViewedDates.Count - 1))
         {
-            print("Moving dates");
-
             // Prevent the index from going into the future
             if (input > 0 && currentlyViewedDates[currentlyViewedDates.Count - 1] == DateTime.Today)
             {

@@ -77,7 +77,6 @@ public class SaveSystem : MonoBehaviour
     [Button]
     public void Save()
     {
-        print("Saving...");
         UpdateAll();
 
         string json = JsonUtility.ToJson(saveData);

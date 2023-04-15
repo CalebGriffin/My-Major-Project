@@ -183,12 +183,7 @@ public class TimeSystem : MonoBehaviour
         if (!GameTimeDict.ContainsKey(today))
         {
             GameTimeDict.Add(today, new HoursArray(new int[24]));
-            print("Added " + today + " to the dictionary");
-            print(GameTimeDict[today]);
         }
-
-        print(GameTimeDict[today].hours);
-        print(DateTime.Now.Hour);
 
         // Increment the current hour by one second
         GameTimeDict[today].hours[DateTime.Now.Hour]++;
