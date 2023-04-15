@@ -15,4 +15,13 @@ public class CollectibleStorage : Bag
         else
             Destroy(gameObject);
     }
+
+    public override void AddItem(ItemData item, int amount = 1)
+    {
+        base.AddItem(item, amount);
+        if (Items.Count >= 18)
+        {
+            TimeMachine.Instance.AnimateIn();
+        }
+    }
 }

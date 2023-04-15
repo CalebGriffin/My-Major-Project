@@ -28,6 +28,19 @@ public class SaveSystem : MonoBehaviour
     [SerializeField] private DialogueController marcus;
     [SerializeField] private DialogueController tobias;
 
+    public bool GameHasBeenPlayedBefore
+    {
+        get
+        {
+            return saveData.GameHasBeenPlayedBefore;
+        }
+
+        set
+        {
+            saveData.GameHasBeenPlayedBefore = value;
+        }
+    }
+
     void Start()
     {
         Load();
@@ -40,6 +53,9 @@ public class SaveSystem : MonoBehaviour
         UpdateCollectibles();
         UpdateTools();
         UpdatePlayer();
+        UpdateNPCs();
+        UpdateEndingAchieved();
+        UpdateTimeMachineKept();
     }
 
     public void UpdateInventory()
@@ -74,6 +90,16 @@ public class SaveSystem : MonoBehaviour
         saveData.SpokenToTobias = tobias.SpokenToPlayer;
     }
 
+    public void UpdateEndingAchieved()
+    {
+        saveData.EndingAchieved = TimeMachine.Instance.EndingAchieved;
+    }
+
+    public void UpdateTimeMachineKept()
+    {
+        saveData.TimeMachineKept = TimeMachine.Instance.TimeMachineKept;
+    }
+
     [Button]
     public void Save()
     {
@@ -86,9 +112,10 @@ public class SaveSystem : MonoBehaviour
     [Button]
     public void Load()
     {
+        ClearAll();
+
         if (!File.Exists(Application.persistentDataPath + "/savefile.json"))
         {
-            ClearAll();
             return;
         }
         
@@ -113,6 +140,9 @@ public class SaveSystem : MonoBehaviour
         edith.SpokenToPlayer = saveData.SpokenToEdith;
         marcus.SpokenToPlayer = saveData.SpokenToMarcus;
         tobias.SpokenToPlayer = saveData.SpokenToTobias;
+
+        TimeMachine.Instance.EndingAchieved = saveData.EndingAchieved;
+        TimeMachine.Instance.TimeMachineKept = saveData.TimeMachineKept;
     }
 
     [Button]
@@ -138,6 +168,11 @@ public class SaveSystem : MonoBehaviour
         edith.SpokenToPlayer = false;
         marcus.SpokenToPlayer = false;
         tobias.SpokenToPlayer = false;
+
+        TimeMachine.Instance.EndingAchieved = false;
+        TimeMachine.Instance.TimeMachineKept = false;
+
+        GameHasBeenPlayedBefore = false;
     }
 
     [Button]

@@ -22,5 +22,8 @@ public class SaveData
     public bool SpokenToMarcus;
     public bool SpokenToTobias;
 
+    public bool EndingAchieved;
+    public bool TimeMachineKept;
+
     public bool GameHasBeenPlayedBefore;
 }

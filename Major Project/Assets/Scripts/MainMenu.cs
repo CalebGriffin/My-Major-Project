@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.SceneManagement;
+using DialogueEditor;
 using NaughtyAttributes;
 using TMPro;
 
@@ -14,6 +14,8 @@ public class MainMenu : MonoBehaviour
     private InputAction select;
     private InputAction slider;
     private InputAction back;
+
+    [SerializeField] private NPCConversation starterConversation;
 
     [SerializeField] private GameObject reticleCanvas;
     [SerializeField] private NewFirstPersonController playerController;
@@ -61,13 +63,12 @@ public class MainMenu : MonoBehaviour
 
     private void OnDisable()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Unsubscribe from the input actions
+        moveSelection.performed -= MoveSelection;
+        select.performed -= ArrowAnimation;
+        slider.performed -= Slider;
+        back.performed -= ControlsToggle;
+        GRefs.Instance.PlayerInput.actions[GRefs.Instance.PlayerControls.Player.OpenMainMenu.name].performed -= FadeMenuIn;
     }
 
     [Button]
@@ -111,8 +112,21 @@ public class MainMenu : MonoBehaviour
         {
             depthOfField.active = false;
 
-            // Switch to the player action map
-            GRefs.Instance.PlayerInput.SwitchCurrentActionMap(GRefs.Instance.PlayerActionMap);
+            if (SaveSystem.Instance.GameHasBeenPlayedBefore)
+            {
+                // Switch to the player action map
+                GRefs.Instance.PlayerInput.SwitchCurrentActionMap(GRefs.Instance.PlayerActionMap);
+            }
+            else
+            {
+                // Switch to the dialogue action map
+                GRefs.Instance.PlayerInput.SwitchCurrentActionMap(GRefs.Instance.DialogueActionMap);
+                SaveSystem.Instance.GameHasBeenPlayedBefore = true;
+                // Start the conversation
+                ConversationManager.Instance.CurrentNPC = ConversationManager.eNPC.NONE;
+                ConversationManager.Instance.StartConversation(starterConversation);
+                SubscribeToDialogueActions();
+            }
 
             // Show the reticle
             reticleCanvas.SetActive(true);
@@ -218,6 +232,10 @@ public class MainMenu : MonoBehaviour
             item.Reset();
         }
 
+        TimeMachine timeMachine = FindObjectOfType<TimeMachine>(true);
+        timeMachine.EndingAchieved = false;
+        timeMachine.TimeMachineKept = false;
+
         Continue();
     }
 
@@ -246,5 +264,23 @@ public class MainMenu : MonoBehaviour
         #endif
 
         Application.Quit();
+    }
+
+    // Dialogue stuff
+    private void SubscribeToDialogueActions()
+    {
+        GRefs.Instance.PlayerInput.actions[GRefs.Instance.PlayerControls.Dialogue.SelectOption.name].performed += SelectOption;
+        ConversationManager.OnConversationEnded += UnsubscribeFromDialogueActions;
+    }
+
+    private void UnsubscribeFromDialogueActions()
+    {
+        GRefs.Instance.PlayerInput.actions[GRefs.Instance.PlayerControls.Dialogue.SelectOption.name].performed -= SelectOption;
+        ConversationManager.OnConversationEnded -= UnsubscribeFromDialogueActions;
+    }
+
+    private void SelectOption(InputAction.CallbackContext context)
+    {
+        ConversationManager.Instance.PressSelectedOption();
     }
 }

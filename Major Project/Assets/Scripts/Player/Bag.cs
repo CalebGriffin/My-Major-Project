@@ -20,7 +20,7 @@ public class Bag : MonoBehaviour
     }
 
     #region Add Items
-    public void AddItem(ItemData item, int amount = 1)
+    public virtual void AddItem(ItemData item, int amount = 1)
     {
         if (Items.ContainsKey(item))
         {
