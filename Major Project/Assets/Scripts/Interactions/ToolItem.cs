@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ToolItem : Item
 {
+    private void Start()
+    {
+        if (ToolStorage.Instance.HasItem(itemData))
+            Destroy(gameObject);
+    }
+
     protected override void OnInteract(int id)
     {
         if (id != gameObject.GetInstanceID())

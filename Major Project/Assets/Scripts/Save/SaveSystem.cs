@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using NaughtyAttributes;
 
+[DefaultExecutionOrder(-100)]
 public class SaveSystem : MonoBehaviour
 {
     public static SaveSystem Instance;
