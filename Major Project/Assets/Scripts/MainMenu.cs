@@ -31,6 +31,7 @@ public class MainMenu : MonoBehaviour
     private float arrowAnimationTime = 0.1f;
 
     private bool controlsOpen = false;
+    private bool gameStartedBefore = false;
 
     private float apertureOffValue = 0.1f;
     private float apertureOnValue = 2.5f;
@@ -59,6 +60,8 @@ public class MainMenu : MonoBehaviour
         back.performed += ControlsToggle;
 
         GRefs.Instance.PlayerInput.actions[GRefs.Instance.PlayerControls.Player.OpenMainMenu.name].performed += FadeMenuIn;
+
+        GRefs.Instance.PlayerInput.actions[GRefs.Instance.PlayerControls.MainMenu.Continue.name].performed += FadeMenuOut;
     }
 
     private void OnDisable()
@@ -69,6 +72,7 @@ public class MainMenu : MonoBehaviour
         slider.performed -= Slider;
         back.performed -= ControlsToggle;
         GRefs.Instance.PlayerInput.actions[GRefs.Instance.PlayerControls.Player.OpenMainMenu.name].performed -= FadeMenuIn;
+        GRefs.Instance.PlayerInput.actions[GRefs.Instance.PlayerControls.MainMenu.Continue.name].performed -= FadeMenuOut;
     }
 
     [Button]
@@ -94,11 +98,17 @@ public class MainMenu : MonoBehaviour
         // Update the UI elements
         LeanTween.move(titleText, new Vector3(0, -100, 0), animationTime).setEaseOutBack();
         LeanTween.moveLocalY(buttonParent, -75, animationTime).setEaseOutQuad();
+
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuOpenSound, GRefs.Instance.MainMenuOpenSoundVolume);
     }
 
     [Button]
-    private void FadeMenuOut()
+    private void FadeMenuOut(InputAction.CallbackContext context)
     {
+        if (!gameStartedBefore) return;
+
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuOpenSound, GRefs.Instance.MainMenuOpenSoundVolume);
+
         // Update Depth of Field values
         depthOfField.active = true;
         LeanTween.value(gameObject, apertureOnValue, apertureOffValue, animationTime).setOnUpdate((float val) =>
@@ -145,6 +155,7 @@ public class MainMenu : MonoBehaviour
             arrows[arrowIndex].offsetMin = new Vector2(val, arrows[arrowIndex].offsetMin.y);
         }).setEaseInOutSine().setOnComplete(() =>
         {
+            SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuSelectSound);
             LeanTween.value(gameObject, 15, 10, arrowAnimationTime).setOnUpdate((float val) =>
             {
                 arrows[arrowIndex].offsetMax = new Vector2(-val, arrows[arrowIndex].offsetMax.y);
@@ -174,6 +185,7 @@ public class MainMenu : MonoBehaviour
 
     private void MoveSelection(InputAction.CallbackContext context)
     {
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuMoveSelectionSound);
         arrowIndex = (int)Mathf.Repeat(arrowIndex - context.ReadValue<float>(), arrows.Length);
         for (int i = 0; i < arrows.Length; i++)
         {
@@ -202,7 +214,8 @@ public class MainMenu : MonoBehaviour
 
     private void Continue()
     {
-        FadeMenuOut();
+        gameStartedBefore = true;
+        FadeMenuOut(new InputAction.CallbackContext {});
     }
 
     private void NewGame()

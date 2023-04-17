@@ -36,7 +36,7 @@ public class ItemMenuUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI toolsCurrentItemText;
     [SerializeField] private TextMeshProUGUI collectiblesCurrentItemText;
 
-    private enum Direction { Up, Down, Left, Right }
+    private Vector3 smallScale = new Vector3(0.001f, 0.001f, 0.001f);
 
     // Start is called before the first frame update
     void Start()
@@ -88,22 +88,26 @@ public class ItemMenuUI : MonoBehaviour
 
     private void AnimateItemMenuUIIn()
     {
+        itemMenuObject.transform.localScale = smallScale;
         // Animate the item menu UI in
         LeanTween.moveLocalY(itemMenuObject, 0, itemMenuAnimationTime).setEaseOutCirc();
         LeanTween.scale(itemMenuObject, Vector3.one, itemMenuAnimationTime).setEaseOutBack().setOnComplete(() =>
         {
             toolTipsObject.SetActive(true);
         });
+
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuOpenSound, GRefs.Instance.MenuOpenSoundVolume);
     }
 
     private void AnimateItemMenuUIOut()
     {
         // Animate the item menu UI out
         LeanTween.moveLocalY(itemMenuObject, -1000, itemMenuAnimationTime).setEaseInCirc();
-        LeanTween.scale(itemMenuObject, Vector3.zero, itemMenuAnimationTime).setEaseInBack().setOnComplete(() =>
+        LeanTween.scale(itemMenuObject, smallScale, itemMenuAnimationTime).setEaseInBack().setOnComplete(() =>
         {
             playerInput.SwitchCurrentActionMap(GRefs.Instance.PlayerActionMap);
         });
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuOpenSound, GRefs.Instance.MenuOpenSoundVolume);
     }
 
     IEnumerator MoveActionHeld()
@@ -142,6 +146,8 @@ public class ItemMenuUI : MonoBehaviour
         {
             currentItemSlot = directionVector.y > 0 ? currentItemSlot.Up : currentItemSlot.Down;
         }
+
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuMoveSelectionSound);
 
         currentItemSlot.Highlight();
 
@@ -184,5 +190,7 @@ public class ItemMenuUI : MonoBehaviour
         Inventory.Instance.RemoveItem(currentItemSlot.ItemData);
         inventoryUI.UpdateInventoryUI();
         currentItemSlot.Highlight();
+
+          SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuCancelSound, GRefs.Instance.MenuCancelSoundVolume);
     }
 }

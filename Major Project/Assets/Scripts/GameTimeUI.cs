@@ -37,6 +37,8 @@ public class GameTimeUI : MonoBehaviour
     private List<DateTime> currentlyViewedDates = new List<DateTime>();
     private int dayIndex = 6;
 
+    private Vector3 smallScale = new Vector3(0.01f, 0.01f, 0.01f);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,14 +84,19 @@ public class GameTimeUI : MonoBehaviour
 
     private void AnimateGameTimeMenuIn()
     {
+        gameTimeObject.transform.localScale = smallScale;
         LeanTween.moveLocalY(gameTimeObject, 0, gameTimeAnimationTime).setEaseOutCirc();
         LeanTween.scale(gameTimeObject, Vector3.one, gameTimeAnimationTime).setEaseOutBack();
+
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuOpenSound, GRefs.Instance.MenuOpenSoundVolume);
     }
 
     private void AnimateGameTimeMenuOut()
     {
         LeanTween.moveLocalY(gameTimeObject, 1000, gameTimeAnimationTime).setEaseInCirc();
         LeanTween.scale(gameTimeObject, Vector3.zero, gameTimeAnimationTime).setEaseInBack().setOnComplete(() => playerInput.SwitchCurrentActionMap(GRefs.Instance.PlayerActionMap));
+
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuOpenSound, GRefs.Instance.MenuOpenSoundVolume);
     }
 
     private void MoveTimeSelection(InputAction.CallbackContext context)
@@ -122,6 +129,8 @@ public class GameTimeUI : MonoBehaviour
             // Add a new date to the start or end of the list
             currentlyViewedDates.Insert(input < 0 ? 0 : currentlyViewedDates.Count, currentlyViewedDates[input < 0 ? 0 : currentlyViewedDates.Count - 1] + TimeSpan.FromDays(input < 0 ? -1 : 1));
         }
+
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuMoveSelectionSound);
 
         // Update the charts
         UpdateBothCharts(currentlyViewedDates);

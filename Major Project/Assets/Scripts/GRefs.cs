@@ -21,6 +21,9 @@ public class GRefs : MonoBehaviour
 
     [SerializeField] private Transform playerTransform;
     public Transform PlayerTransform { get { return playerTransform; } }
+    
+    [SerializeField] private Transform npcLookTarget;
+    public Transform NPCLookTarget { get { return npcLookTarget; } }
 
     [SerializeField] private Camera playerCamera;
     public Camera PlayerCamera { get { return playerCamera; } }
@@ -47,6 +50,24 @@ public class GRefs : MonoBehaviour
     public string ControlsMenuActionMap { get { return playerControls.ControlsMenu.ToString().ActionMapStringReplace(); } }
 
     public string TradesMenuActionMap { get { return playerControls.TradesMenu.ToString().ActionMapStringReplace(); } }
+
+    [SerializeField] private AudioClip menuOpenSound;
+    public AudioClip MenuOpenSound { get { return menuOpenSound; } }
+    private float menuOpenSoundVolume = 0.15f;
+    public float MenuOpenSoundVolume { get { return menuOpenSoundVolume; } }
+    private float mainMenuOpenSoundVolume = 0.075f;
+    public float MainMenuOpenSoundVolume { get { return mainMenuOpenSoundVolume; } }
+
+    [SerializeField] private AudioClip menuMoveSelectionSound;
+    public AudioClip MenuMoveSelectionSound { get { return menuMoveSelectionSound; } }
+
+    [SerializeField] private AudioClip menuSelectSound;
+    public AudioClip MenuSelectSound { get { return menuSelectSound; } }
+
+    [SerializeField] private AudioClip menuCancelSound;
+    public AudioClip MenuCancelSound { get { return menuCancelSound; } }
+    private float menuCancelSoundVolume = 0.4f;
+    public float MenuCancelSoundVolume { get { return menuCancelSoundVolume; } }
 }
 
 public static class GRefsExtensions

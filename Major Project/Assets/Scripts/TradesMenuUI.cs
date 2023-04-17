@@ -40,6 +40,8 @@ public class TradesMenuUI : MonoBehaviour
         if (LeanTween.isTweening(parentObject))
             return;
 
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuOpenSound, GRefs.Instance.MenuOpenSoundVolume);
+
         int targetPosition = menuOpen ? 400 : 0;
 
         if (!menuOpen)
@@ -79,6 +81,8 @@ public class TradesMenuUI : MonoBehaviour
         float targetScrollPosition = content.offsetMax.y - (value * 77.5f);
 
         targetScrollPosition = Mathf.Clamp(targetScrollPosition, 0f, 2247.5f);
+
+        SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuMoveSelectionSound, 0.6f);
 
         LeanTween.value(content.gameObject, content.offsetMax.y, targetScrollPosition, scrollAnimationTime).setEaseInOutSine().setOnUpdate((float value) =>
         {

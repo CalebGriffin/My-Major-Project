@@ -79,4 +79,16 @@ public class Player : MonoBehaviour
     {
         OnInteractEvent?.Invoke(currentLookedObjectID);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("TownTrigger"))
+            SoundSystem.Instance.EnterTown();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("TownTrigger"))
+            SoundSystem.Instance.ExitTown();
+    }
 }

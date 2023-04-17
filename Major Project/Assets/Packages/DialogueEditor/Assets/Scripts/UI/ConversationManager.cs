@@ -171,6 +171,8 @@ namespace DialogueEditor
         {
             SetState(eState.TransitioningDialogueOff);
 
+            SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuCancelSound, GRefs.Instance.MenuCancelSoundVolume);
+
             CurrentNPC = eNPC.NONE;
 
             OnDialogueEnded?.Invoke();
@@ -203,6 +205,8 @@ namespace DialogueEditor
             if (m_currentSelectedIndex < 0) { return; }
             if (m_currentSelectedIndex >= m_uiOptions.Count) { return; }
             if (m_uiOptions.Count == 0) { return; }
+
+            SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuSelectSound);
 
             UIConversationButton button = m_uiOptions[m_currentSelectedIndex];
             button.OnButtonPressed();
@@ -749,6 +753,8 @@ namespace DialogueEditor
         private void SetSelectedOption(int index)
         {
             if (m_uiOptions.Count == 0) { return; }
+
+            SoundSystem.Instance.PlayEffect(GRefs.Instance.MenuMoveSelectionSound);
 
             if (index < 0)
                 index = 0;
