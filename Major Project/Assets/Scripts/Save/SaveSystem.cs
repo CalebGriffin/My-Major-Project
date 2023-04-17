@@ -163,7 +163,7 @@ public class SaveSystem : MonoBehaviour
         Inventory.Instance.Items.Clear();
         CollectibleStorage.Instance.Items.Clear();
         ToolStorage.Instance.Items.Clear();
-        playerTransform.position = Vector3.zero;
+        playerTransform.position = new Vector3(35, 1.3f, -35);
         playerTransform.rotation = Quaternion.identity;
         cedric.SpokenToPlayer = false;
         isabella.SpokenToPlayer = false;
