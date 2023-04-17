@@ -50,6 +50,28 @@ namespace DialogueEditor
             m_rect = GetComponent<RectTransform>();
         }
 
+        private void OnEnable()
+        {
+            if (m_buttonType == eButtonType.Option)
+            {
+                ConversationManager.OnConversationEnded += DisableSelf;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (m_buttonType == eButtonType.Option)
+            {
+                ConversationManager.OnConversationEnded -= DisableSelf;
+            }
+        }
+
+        private void DisableSelf()
+        {
+            if (gameObject.activeSelf)
+                gameObject.SetActive(false);
+        }
+
         private void Update()
         {
             if (Hovering)

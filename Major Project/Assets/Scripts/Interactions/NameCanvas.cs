@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class NameCanvas : MonoBehaviour
 {
-    private Transform mainCameraTransform;
     private new Transform transform;
 
     void OnEnable()
     {
-        if (mainCameraTransform == null)
-            mainCameraTransform = GRefs.Instance.PlayerCameraTransform;
-        
         if (transform == null)
             transform = GetComponent<Transform>();
     }
@@ -19,7 +15,7 @@ public class NameCanvas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(mainCameraTransform);
+        transform.LookAt(GRefs.Instance.PlayerCameraTransform);
         transform.Rotate(0, 180, 0);
     }
 }

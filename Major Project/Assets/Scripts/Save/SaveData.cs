@@ -5,12 +5,12 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-    public List<ItemData> InventoryItems = new List<ItemData>();
+    public List<string> InventoryItems = new List<string>();
     public List<int> InventoryItemAmounts = new List<int>();
 
-    public List<ItemData> ToolItems = new List<ItemData>();
+    public List<string> ToolItems = new List<string>();
 
-    public List<ItemData> CollectibleItems = new List<ItemData>();
+    public List<string> CollectibleItems = new List<string>();
 
     public Vector3 PlayerPosition;
     public Quaternion PlayerRotation;

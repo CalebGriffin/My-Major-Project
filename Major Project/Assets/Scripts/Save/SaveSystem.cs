@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using NaughtyAttributes;
 
@@ -41,6 +42,8 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
+    [SerializeField] private List<ItemData> allItems = new List<ItemData>();
+
     void Start()
     {
         Load();
@@ -60,18 +63,18 @@ public class SaveSystem : MonoBehaviour
 
     public void UpdateInventory()
     {
-        saveData.InventoryItems = new List<ItemData>(Inventory.Instance.Items.Keys);
+        saveData.InventoryItems = new List<string>(Inventory.Instance.Items.Keys.Select(x => x.ItemName));
         saveData.InventoryItemAmounts = new List<int>(Inventory.Instance.Items.Values);
     }
 
     public void UpdateCollectibles()
     {
-        saveData.CollectibleItems = new List<ItemData>(CollectibleStorage.Instance.Items.Keys);
+        saveData.CollectibleItems = new List<string>(CollectibleStorage.Instance.Items.Keys.Select(x => x.ItemName));
     }
 
     public void UpdateTools()
     {
-        saveData.ToolItems = new List<ItemData>(ToolStorage.Instance.Items.Keys);
+        saveData.ToolItems = new List<string>(ToolStorage.Instance.Items.Keys.Select(x => x.ItemName));
     }
 
     public void UpdatePlayer()
@@ -123,13 +126,13 @@ public class SaveSystem : MonoBehaviour
         saveData = JsonUtility.FromJson<SaveData>(json);
 
         Inventory.Instance.Items.Clear();
-        Inventory.Instance.AddItems(saveData.InventoryItems.ToArray(), saveData.InventoryItemAmounts.ToArray());
+        Inventory.Instance.AddItems(saveData.InventoryItems.Select(x => allItems.Find(y => y.ItemName == x)).ToArray(), saveData.InventoryItemAmounts.ToArray());
 
         CollectibleStorage.Instance.Items.Clear();
-        CollectibleStorage.Instance.AddItems(saveData.CollectibleItems.ToArray());
+        CollectibleStorage.Instance.AddItems(saveData.CollectibleItems.Select(x => allItems.Find(y => y.ItemName == x)).ToArray());
 
         ToolStorage.Instance.Items.Clear();
-        ToolStorage.Instance.AddItems(saveData.ToolItems.ToArray());
+        ToolStorage.Instance.AddItems(saveData.CollectibleItems.Select(x => allItems.Find(y => y.ItemName == x)).ToArray());
 
         playerTransform.position = saveData.PlayerPosition;
         playerTransform.rotation = saveData.PlayerRotation;

@@ -1682,6 +1682,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &809790682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809790683}
+  m_Layer: 0
+  m_Name: NPC Look Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &809790683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809790682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8393882896817357394}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902001052
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,7 +3133,6 @@ GameObject:
   - component: {fileID: 1901244943}
   - component: {fileID: 1901244946}
   - component: {fileID: 1901244945}
-  - component: {fileID: 1901244944}
   m_Layer: 10
   m_Name: MiniMap Player Marker
   m_TagString: Untagged
@@ -3175,19 +3205,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1901244944
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901244942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1902986310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3601,7 +3618,7 @@ RectTransform:
   m_GameObject: {fileID: 369876817961290575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1799797245263419486}
@@ -5367,7 +5384,7 @@ RectTransform:
   m_GameObject: {fileID: 3206335948014840419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5309086768895380553}
@@ -5493,6 +5510,9 @@ MonoBehaviour:
   inventoryCurrentItemText: {fileID: 6368479305661361821}
   toolsCurrentItemText: {fileID: 6797515227083866778}
   collectiblesCurrentItemText: {fileID: 3856884256701509385}
+  itemMenuOpenSound: {fileID: 8300000, guid: 6b846c7be17c04beda1559a888cdf56f, type: 3}
+  moveSelectionSound: {fileID: 8300000, guid: cf11a934967b23340a4d22619832082c, type: 3}
+  dropItemSound: {fileID: 8300000, guid: 9629782e127969f439d15c696113b49d, type: 3}
 --- !u!1 &3368352084522916715
 GameObject:
   m_ObjectHideFlags: 0
@@ -7807,6 +7827,7 @@ Transform:
   - {fileID: 8393882897384070728}
   - {fileID: 7818317473093055051}
   - {fileID: 1901244943}
+  - {fileID: 809790683}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8118,6 +8139,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: bb2804d6-2288-43eb-a607-d616499fbcf1
     m_ActionName: TradesMenu/Close[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7756772a-a4cc-4100-b25d-fe039abe470c
+    m_ActionName: MainMenu/Continue[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MainMenu

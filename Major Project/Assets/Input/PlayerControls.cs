@@ -766,6 +766,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Continue"",
+                    ""type"": ""Button"",
+                    ""id"": ""7756772a-a4cc-4100-b25d-fe039abe470c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -854,6 +863,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""20881463-2662-4b8f-997d-5806bd284dac"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ab1593e-0846-4856-9686-7347348a796e"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Continue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1148,6 +1179,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_MainMenu = asset.FindActionMap("MainMenu", throwIfNotFound: true);
         m_MainMenu_MoveSelection = m_MainMenu.FindAction("MoveSelection", throwIfNotFound: true);
         m_MainMenu_Select = m_MainMenu.FindAction("Select", throwIfNotFound: true);
+        m_MainMenu_Continue = m_MainMenu.FindAction("Continue", throwIfNotFound: true);
         // ControlsMenu
         m_ControlsMenu = asset.FindActionMap("ControlsMenu", throwIfNotFound: true);
         m_ControlsMenu_Slider = m_ControlsMenu.FindAction("Slider", throwIfNotFound: true);
@@ -1461,12 +1493,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IMainMenuActions m_MainMenuActionsCallbackInterface;
     private readonly InputAction m_MainMenu_MoveSelection;
     private readonly InputAction m_MainMenu_Select;
+    private readonly InputAction m_MainMenu_Continue;
     public struct MainMenuActions
     {
         private @PlayerControls m_Wrapper;
         public MainMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @MoveSelection => m_Wrapper.m_MainMenu_MoveSelection;
         public InputAction @Select => m_Wrapper.m_MainMenu_Select;
+        public InputAction @Continue => m_Wrapper.m_MainMenu_Continue;
         public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1482,6 +1516,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Select.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnSelect;
+                @Continue.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnContinue;
+                @Continue.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnContinue;
+                @Continue.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnContinue;
             }
             m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -1492,6 +1529,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @Continue.started += instance.OnContinue;
+                @Continue.performed += instance.OnContinue;
+                @Continue.canceled += instance.OnContinue;
             }
         }
     }
@@ -1630,6 +1670,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnMoveSelection(InputAction.CallbackContext context);
         void OnSelect(InputAction.CallbackContext context);
+        void OnContinue(InputAction.CallbackContext context);
     }
     public interface IControlsMenuActions
     {

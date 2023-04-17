@@ -23,14 +23,14 @@ public class WaterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(UpdateWaterValues());
+        //StartCoroutine(UpdateWaterValues());
     }
 
     // Update is called once per frame
     void Update()
     {
         water.ManualTimeSeconds += Time.deltaTime;
-        water.UpdateMaterial();
+        //water.UpdateMaterial();
     }
 
     private IEnumerator UpdateWaterValues()
