@@ -68,8 +68,14 @@ namespace DialogueEditor
 
         private void DisableSelf()
         {
-            if (gameObject.activeSelf)
+            try
+            {
                 gameObject.SetActive(false);
+            }
+            catch (MissingReferenceException)
+            {
+                // This is fine, we're just trying to disable the button
+            }
         }
 
         private void Update()
